@@ -6,27 +6,27 @@ export const metadata = {
 };
 const items = [
   {
-    icon: "♿",
+    icon: "/images/icons/icon-wheelchair.jpg",
     title: "Wheelchair & mobility access",
     text: "The entire facility, including Mangrove Walk's boardwalk, is step-free. Wheelchairs and motorized scooters are available to borrow at Guest Services, first-come first-served.",
   },
   {
-    icon: "🧘",
+    icon: "/images/icons/icon-meditation.jpg",
     title: "Sensory-friendly hours",
     text: "The first hour after opening (9:00–10:00 AM) on the first Tuesday of every month runs with lowered lighting and sound in Deep Tank Theater and no scheduled announcements.",
   },
   {
-    icon: "🐕‍🦺",
+    icon: "/images/icons/icon-servicedog.jpg",
     title: "Service animal policy",
     text: "Trained service animals are welcome throughout the facility. Due to the live-animal environment, we ask that service animals stay leashed and away from touch-pool edges.",
   },
   {
-    icon: "🚻",
+    icon: "/images/icons/icon-restroom.jpg",
     title: "Accessible restrooms & seating",
     text: "Accessible restrooms are located near Welcome Plaza, Reef Hall, and Deep Tank Theater. Bench seating is available in every zone.",
   },
   {
-    icon: "🅿️",
+    icon: "/images/icons/icon-parking.jpg",
     title: "Accessible parking",
     text: "Accessible parking spaces are in the front row of the main lot, closest to the Welcome Plaza entrance ramp.",
   },
@@ -39,6 +39,7 @@ export default function AccessibilityPage() {
         title="Visit planning &amp; site accessibility"
         subtitle="Information for planning an accessible visit, plus the on-site tools available on this website."
         crumbLabel="Accessibility"
+        image="/images/AccessibilityHero.png"
       />
 
       <div
@@ -63,12 +64,20 @@ export default function AccessibilityPage() {
             >
               <div
                 style={{
-                  fontSize: "1.8rem",
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  overflow: "hidden",
                   marginBottom: 8,
                 }}
                 aria-hidden="true"
               >
-                {item.icon}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.icon}
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
               </div>
               <h3
                 style={{
@@ -80,7 +89,7 @@ export default function AccessibilityPage() {
               <p
                 style={{
                   margin: 0,
-                  color: "var(--ink-600)",
+                  color: "var(--glass-text-dim)",
                 }}
               >
                 {item.text}
@@ -93,19 +102,32 @@ export default function AccessibilityPage() {
           className="card"
           style={{
             padding: 26,
-            background: "var(--ocean-100)",
           }}
         >
           <h3
             style={{
               marginBottom: 8,
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
             }}
           >
-            ♿ On-site accessibility toolbar
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/icons/icon-wheelchair.jpg"
+              alt=""
+              style={{
+                width: 22,
+                height: 22,
+                borderRadius: "50%",
+                objectFit: "cover",
+              }}
+            />
+            On-site accessibility toolbar
           </h3>
           <p
             style={{
-              color: "var(--ink-700)",
+              color: "var(--glass-text-dim)",
               marginBottom: 0,
             }}
           >
@@ -122,7 +144,7 @@ export default function AccessibilityPage() {
 
         <p
           style={{
-            color: "var(--ink-500)",
+            color: "var(--glass-text-dim)",
           }}
         >
           Notice something that isn&apos;t accessible, or have a request for
@@ -130,7 +152,7 @@ export default function AccessibilityPage() {
           <a
             href="tel:+15555550123"
             style={{
-              color: "var(--ocean-700)",
+              color: "var(--coral-400)",
               fontWeight: 600,
             }}
           >

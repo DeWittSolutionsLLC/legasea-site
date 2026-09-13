@@ -31,8 +31,16 @@ export default function DetailHero({ icon, image, video, alt }) {
     );
   }
   return (
-    <div className={styles.iconFallback} aria-hidden="true">
-      {icon}
+    <div className={styles.mediaWrap}>
+      <Image
+        src={icon}
+        alt={alt}
+        fill
+        style={{
+          objectFit: "cover",
+        }}
+        sizes="(max-width: 760px) 100vw, 560px"
+      />
     </div>
   );
 }

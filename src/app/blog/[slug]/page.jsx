@@ -38,12 +38,19 @@ export default async function BlogPostPage(props) {
 
       <div
         style={{
-          fontSize: "3rem",
+          width: 72,
+          height: 72,
+          borderRadius: "var(--radius-md)",
+          overflow: "hidden",
           margin: "18px 0 6px",
         }}
-        aria-hidden="true"
       >
-        {post.icon}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={post.icon}
+          alt=""
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
       </div>
       <span className="tag">{post.category}</span>
       <h1

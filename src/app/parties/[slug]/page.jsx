@@ -45,7 +45,18 @@ export default async function PartyDetailPage(props) {
                   alignItems: "flex-start",
                 }}
               >
-                <span aria-hidden="true">✅</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/icons/icon-check.jpg"
+                  alt=""
+                  style={{
+                    width: 18,
+                    height: 18,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    flexShrink: 0,
+                  }}
+                />
                 <span>{item}</span>
               </li>
             ))}
@@ -56,6 +67,7 @@ export default async function PartyDetailPage(props) {
             style={{
               fontSize: "1.4rem",
               marginTop: 20,
+              color: "var(--coral-600)",
             }}
           >
             Starting at ${party.startingPrice}

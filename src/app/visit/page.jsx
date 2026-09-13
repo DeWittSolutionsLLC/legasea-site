@@ -34,13 +34,14 @@ export default function VisitPage() {
             <h2
               style={{
                 marginBottom: 4,
+                color: "var(--glass-text)",
               }}
             >
               General Admission
             </h2>
             <p
               style={{
-                color: "var(--ink-500)",
+                color: "var(--glass-text-dim)",
                 marginBottom: 20,
               }}
             >
@@ -79,13 +80,14 @@ export default function VisitPage() {
             <h2
               style={{
                 marginBottom: 4,
+                color: "var(--glass-text)",
               }}
             >
               Guided Tours
             </h2>
             <p
               style={{
-                color: "var(--ink-500)",
+                color: "var(--glass-text-dim)",
                 marginBottom: 12,
               }}
             >
@@ -126,13 +128,14 @@ export default function VisitPage() {
             <h2
               style={{
                 marginBottom: 4,
+                color: "var(--glass-text)",
               }}
             >
               Animal Encounters
             </h2>
             <p
               style={{
-                color: "var(--ink-500)",
+                color: "var(--glass-text-dim)",
                 marginBottom: 20,
               }}
             >
@@ -154,7 +157,7 @@ export default function VisitPage() {
                         alignItems: "center",
                         gap: 4,
                         fontSize: "0.8rem",
-                        color: "var(--ink-500)",
+                        color: "var(--glass-text-dim)",
                       }}
                     >
                       <IconClock size={12} /> {exp.duration}
@@ -171,7 +174,6 @@ export default function VisitPage() {
           className="card"
           style={{
             padding: 28,
-            background: "var(--sand-200)",
             display: "flex",
             flexWrap: "wrap",
             alignItems: "center",
@@ -190,7 +192,7 @@ export default function VisitPage() {
             <p
               style={{
                 margin: 0,
-                color: "var(--ink-500)",
+                color: "var(--glass-text-dim)",
               }}
             >
               Birthday parties, field trips, and offsite events have their own

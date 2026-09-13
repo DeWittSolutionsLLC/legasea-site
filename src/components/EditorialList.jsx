@@ -7,14 +7,8 @@ export default function EditorialList({ items }) {
       {items.map((item) => (
         <Link href={item.href} key={item.href} className={styles.row}>
           <div className={styles.media}>
-            {item.image ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={item.image} alt="" loading="lazy" />
-            ) : (
-              <div className={styles.mediaIcon} aria-hidden="true">
-                {item.icon}
-              </div>
-            )}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={item.image ?? item.icon} alt="" loading="lazy" />
           </div>
           <div className={styles.content}>
             {item.tag}

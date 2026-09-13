@@ -26,12 +26,21 @@ export default async function ShopProductPage(props) {
         <div>
           <div
             style={{
-              fontSize: "3.4rem",
-              marginBottom: 10,
+              position: "relative",
+              width: "100%",
+              aspectRatio: "4 / 3",
+              borderRadius: "var(--radius-lg)",
+              overflow: "hidden",
+              boxShadow: "var(--shadow-md)",
+              marginBottom: 18,
             }}
-            aria-hidden="true"
           >
-            {product.icon}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={product.icon}
+              alt=""
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
           </div>
           <span className="tag">
             {product.type === "gift-card" ? "Gift Card" : "Merch"}

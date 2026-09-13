@@ -200,7 +200,8 @@ export default function Home() {
                 className={styles.zoneChip}
               >
                 <div className={styles.zoneChipIcon} aria-hidden="true">
-                  {zone.icon}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={zone.icon} alt="" />
                 </div>
                 <strong
                   style={{
@@ -272,11 +273,33 @@ export default function Home() {
             </p>
             <div
               style={{
-                fontSize: "2rem",
+                display: "flex",
+                justifyContent: "center",
+                gap: 10,
                 marginBottom: 16,
               }}
             >
-              🐠 🦎 🐸 🐟 🦀
+              {[
+                "/images/icons/icon-fish.jpg",
+                "/images/icons/icon-lizard.jpg",
+                "/images/icons/icon-frog.jpg",
+                "/images/icons/icon-ray.jpg",
+                "/images/icons/icon-crab.jpg",
+              ].map((src) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={src}
+                  src={src}
+                  alt=""
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "2px solid rgba(255,255,255,0.4)",
+                  }}
+                />
+              ))}
             </div>
             <Link href="/stamps" className={`btn ${styles.btnGlow}`}>
               Start the Hunt
@@ -314,11 +337,18 @@ export default function Home() {
                   className="card-media"
                   style={{
                     background: "rgba(255,255,255,0.05)",
-                    fontSize: "2.4rem",
                   }}
-                  aria-hidden="true"
                 >
-                  {post.icon}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={post.icon}
+                    alt=""
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
                 </div>
                 <div className={styles.glassCardBody}>
                   <span className={styles.glassTag}>{post.category}</span>

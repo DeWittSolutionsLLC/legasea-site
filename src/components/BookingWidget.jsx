@@ -24,17 +24,21 @@ export default function BookingWidget({ experience }) {
     return (
       <div className={styles.widget}>
         <div className={styles.confirmWrap}>
-          <div className={styles.confirmIcon}>✅</div>
+          <div className={styles.confirmIcon}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/icons/icon-check.jpg" alt="" />
+          </div>
           <h3
             style={{
               marginBottom: 4,
+              color: "var(--glass-text)",
             }}
           >
             You&apos;re booked!
           </h3>
           <p
             style={{
-              color: "var(--ink-500)",
+              color: "var(--glass-text-dim)",
               margin: 0,
             }}
           >

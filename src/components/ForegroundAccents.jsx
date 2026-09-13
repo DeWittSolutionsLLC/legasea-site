@@ -3,18 +3,17 @@
 import { useEffect, useRef } from "react";
 import styles from "./ForegroundAccents.module.css";
 const ASSETS = {
-  // "jungle" now renders the Reptarium's lizard close-ups rather than plant life.
   jungle: {
-    left: "/images/foliage/panel-lizard-left.webp",
-    right: "/images/foliage/panel-lizard-right.webp",
+    left: "/images/foliage/panel-jungle-left.webp",
+    right: "/images/foliage/panel-jungle-right.webp",
   },
   coral: {
     left: "/images/foliage/panel-coral-left.webp",
     right: "/images/foliage/panel-coral-right.webp",
   },
-  // Half Reptarium, half Aquarium — a lizard framing one side, reef the other.
+  // Half Reptarium, half Aquarium — trees framing one side, reef the other.
   mixed: {
-    left: "/images/foliage/panel-lizard-left.webp",
+    left: "/images/foliage/panel-jungle-left.webp",
     right: "/images/foliage/panel-coral-right.webp",
   },
 };

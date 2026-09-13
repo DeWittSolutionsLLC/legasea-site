@@ -48,6 +48,7 @@ export default function VipPage() {
         subtitle="Every membership tier includes a scannable member card — flash it at any station for fast-pass access and tracked perks."
         tone="coral"
         crumbLabel="VIP & Membership"
+        image="/images/VipHero.png"
       />
 
       <div className="container section">
@@ -89,7 +90,18 @@ export default function VipPage() {
                       fontSize: "0.92rem",
                     }}
                   >
-                    <span aria-hidden="true">✅</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/icons/icon-check.jpg"
+                      alt=""
+                      style={{
+                        width: 18,
+                        height: 18,
+                        borderRadius: "50%",
+                        objectFit: "cover",
+                        flexShrink: 0,
+                      }}
+                    />
                     <span>{perk}</span>
                   </li>
                 ))}
@@ -106,8 +118,10 @@ export default function VipPage() {
 
         <div className={styles.grid}>
           <div>
-            <h2>Your digital member card</h2>
-            <p className="lede">
+            <h2 style={{ color: "var(--glass-text)" }}>
+              Your digital member card
+            </h2>
+            <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
               Membership is tracked automatically — this preview shows the card
               guests would see in their account, plus how a station scan logs
               against it.
@@ -115,8 +129,8 @@ export default function VipPage() {
             <MemberCard />
           </div>
           <div>
-            <h2>Nearby offers</h2>
-            <p className="lede">
+            <h2 style={{ color: "var(--glass-text)" }}>Nearby offers</h2>
+            <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
               Geo-fencing (Phase 4) triggers offers automatically as members
               approach the property.
             </p>

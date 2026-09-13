@@ -9,19 +9,13 @@ export default function BentoGrid({ items }) {
           key={item.href}
           className={`${styles.tile} ${item.size === "large" ? styles.large : ""} ${item.size === "wide" ? styles.wide : ""}`}
         >
-          {item.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={item.image}
-              alt=""
-              className={styles.tileImg}
-              loading="lazy"
-            />
-          ) : (
-            <div className={styles.tileIcon} aria-hidden="true">
-              {item.icon}
-            </div>
-          )}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={item.image ?? item.icon}
+            alt=""
+            className={styles.tileImg}
+            loading="lazy"
+          />
           <div className={styles.tileOverlay}>
             <span className={styles.tileTag}>{item.tag}</span>
             <p className={styles.tileTitle}>{item.title}</p>

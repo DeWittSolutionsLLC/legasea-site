@@ -20,7 +20,7 @@ export const zones = [
   {
     slug: "reef-hall",
     name: "Reef Hall",
-    icon: "🐠",
+    icon: "/images/icons/icon-fish.jpg",
     color: "var(--ocean-500)",
     x: 18,
     y: 28,
@@ -31,7 +31,7 @@ export const zones = [
   {
     slug: "reptarium",
     name: "The Reptarium",
-    icon: "🦎",
+    icon: "/images/icons/icon-lizard.jpg",
     color: "var(--reptile-500)",
     x: 62,
     y: 24,
@@ -46,7 +46,7 @@ export const zones = [
   {
     slug: "mangrove-walk",
     name: "Mangrove Walk",
-    icon: "🌿",
+    icon: "/images/icons/icon-foliage.jpg",
     color: "var(--reptile-600)",
     x: 40,
     y: 55,
@@ -57,7 +57,7 @@ export const zones = [
   {
     slug: "deep-tank",
     name: "Deep Tank Theater",
-    icon: "🦈",
+    icon: "/images/icons/icon-shark.jpg",
     color: "var(--ocean-700)",
     x: 78,
     y: 60,
@@ -68,7 +68,7 @@ export const zones = [
   {
     slug: "kids-cove",
     name: "Kids' Cove",
-    icon: "🦀",
+    icon: "/images/icons/icon-crab.jpg",
     color: "var(--coral-500)",
     x: 22,
     y: 80,
@@ -79,7 +79,7 @@ export const zones = [
   {
     slug: "welcome-plaza",
     name: "Welcome Plaza",
-    icon: "🎟️",
+    icon: "/images/icons/icon-ticket.jpg",
     color: "var(--ink-500)",
     x: 55,
     y: 88,
@@ -94,7 +94,7 @@ export const experiences = [
     category: "admission",
     name: "General Admission",
     zone: "welcome-plaza",
-    icon: "🎟️",
+    icon: "/images/icons/icon-ticket.jpg",
     summary: "Full-day access to every hall, tank, and show.",
     description:
       "One ticket gets you into Reef Hall, The Reptarium, Mangrove Walk, and Deep Tank Theater for the entire day, including all scheduled shows and keeper talks.",
@@ -107,7 +107,7 @@ export const experiences = [
     category: "tour",
     name: "Reptarium Behind-the-Scenes Tour",
     zone: "reptarium",
-    icon: "🦎",
+    icon: "/images/icons/icon-lizard.jpg",
     summary: "A 45-minute guided walk through keeper-only reptile spaces.",
     description:
       "Go past the glass into feed prep, the quarantine room, and the annex with a Reptarium keeper. Includes an up-close encounter with a resident iguana.",
@@ -122,7 +122,7 @@ export const experiences = [
     category: "tour",
     name: "Deep Tank VIP Viewing",
     zone: "deep-tank",
-    icon: "🦈",
+    icon: "/images/icons/icon-shark.jpg",
     summary: "Front-row seating plus a pre-show chat with the dive team.",
     description:
       "Skip the general seating crowd with a reserved front-row spot at Deep Tank Theater and a 10-minute Q&A with the dive team before showtime.",
@@ -136,7 +136,7 @@ export const experiences = [
     category: "encounter",
     name: "Feed a Ray",
     zone: "deep-tank",
-    icon: "🐟",
+    icon: "/images/icons/icon-ray.jpg",
     summary: "Hand-feed cownose rays at the touch pool, keeper-supervised.",
     description:
       "Step up to the Ray Touch Pool with a keeper and hand-feed our resident cownose rays. Includes a souvenir photo. This is the flagship QR-scan-to-book experience at the exhibit.",
@@ -154,7 +154,7 @@ export const experiences = [
     category: "encounter",
     name: "Hold a Reptile",
     zone: "reptarium",
-    icon: "🐍",
+    icon: "/images/icons/icon-snake.jpg",
     summary: "Meet and hold a corn snake or bearded dragon with a keeper.",
     description:
       "A five-minute one-on-one with a keeper and one of our ambassador reptiles. Perfect for a scan-and-book moment right outside the Reptarium exit.",
@@ -167,7 +167,7 @@ export const experiences = [
     category: "encounter",
     name: "Keeper Meet & Greet",
     zone: "mangrove-walk",
-    icon: "🧑‍🔬",
+    icon: "/images/icons/icon-keeper.jpg",
     summary: "Ask a keeper anything at the Mangrove Walk turtle lagoon.",
     description:
       "A relaxed 15-minute session with an on-duty keeper covering conservation work, animal care, and Q&A from the group — including hands-on time at the turtle lagoon.",
@@ -181,7 +181,7 @@ export const experiences = [
     category: "encounter",
     name: "Meet a Capybara",
     zone: "kids-cove",
-    icon: "🐹",
+    icon: "/images/icons/icon-capybara.jpg",
     summary: "Get nose-to-nose with our resident capybara, keeper-supervised.",
     description:
       "Capybaras are famously mellow — step in for a calm, up-close visit and a few minutes of gentle petting alongside a keeper.",
@@ -195,7 +195,7 @@ export const experiences = [
     category: "encounter",
     name: "Gem Mining",
     zone: "kids-cove",
-    icon: "💎",
+    icon: "/images/icons/icon-gem.jpg",
     summary: "Sluice a bag of mining rough and keep every gem you find.",
     description:
       "Select a bag of mining rough enriched with real gemstones and fossils, then wash it through our sluice to see what you've found. Every gem is yours to keep.",
@@ -210,7 +210,7 @@ export const shopProducts = [
     slug: "legasea-plush-clownfish",
     type: "merch",
     name: "Clownfish Plush",
-    icon: "🧸",
+    icon: "/images/icons/icon-plush.jpg",
     price: 18,
     description:
       "Soft, huggable clownfish plush — a Reef Hall gift shop bestseller.",
@@ -220,7 +220,7 @@ export const shopProducts = [
     slug: "reptarium-tee",
     type: "merch",
     name: "The Reptarium Tee",
-    icon: "👕",
+    icon: "/images/icons/icon-tshirt.jpg",
     price: 24,
     description: "Unisex cotton tee with the original Reptarium crest artwork.",
     variants: ["S", "M", "L", "XL", "XXL"],
@@ -229,7 +229,7 @@ export const shopProducts = [
     slug: "vip-scan-shirt",
     type: "merch",
     name: "VIP Scan Shirt",
-    icon: "🦺",
+    icon: "/images/icons/icon-vest.jpg",
     price: 32,
     description:
       "Members-only wearable with an embedded scan tag — flash it at any station for VIP perks.",
@@ -239,7 +239,7 @@ export const shopProducts = [
     slug: "kids-explorer-hat",
     type: "merch",
     name: "Kids' Explorer Hat",
-    icon: "🧢",
+    icon: "/images/icons/icon-cap.jpg",
     price: 16,
     description: "Wide-brim sun hat sized for Kids' Cove explorers.",
     variants: ["Toddler", "Youth"],
@@ -248,7 +248,7 @@ export const shopProducts = [
     slug: "coral-mug",
     type: "merch",
     name: "Reef Hall Ceramic Mug",
-    icon: "☕",
+    icon: "/images/icons/icon-mug.jpg",
     price: 14,
     description: "14oz mug featuring hand-illustrated coral reef artwork.",
   },
@@ -256,7 +256,7 @@ export const shopProducts = [
     slug: "digital-gift-card",
     type: "gift-card",
     name: "Digital Gift Card",
-    icon: "🎁",
+    icon: "/images/icons/icon-gift.jpg",
     price: 25,
     description:
       "Emailed instantly. Redeemable for admission, encounters, and shop purchases.",
@@ -267,7 +267,7 @@ export const parties = [
   {
     slug: "birthday-parties",
     name: "Birthday Parties",
-    icon: "🎂",
+    icon: "/images/icons/icon-cake.jpg",
     summary:
       "A private party room plus a guided animal encounter for the birthday guest.",
     description:
@@ -284,7 +284,7 @@ export const parties = [
   {
     slug: "bring-the-zoo-to-you",
     name: "Bring-the-Zoo-to-You",
-    icon: "🚐",
+    icon: "/images/icons/icon-van.jpg",
     summary:
       "Our mobile ambassador team visits your school, event, or backyard.",
     description:
@@ -301,7 +301,7 @@ export const parties = [
   {
     slug: "field-trips",
     name: "Field Trips",
-    icon: "🚌",
+    icon: "/images/icons/icon-bus.jpg",
     summary: "Curriculum-aligned group visits for school and scout groups.",
     description:
       "Discounted group admission with an optional classroom session covering marine biology or herpetology basics, aligned to state science standards.",
@@ -317,7 +317,7 @@ export const parties = [
   {
     slug: "offsite-events",
     name: "Offsite Events",
-    icon: "🎪",
+    icon: "/images/icons/icon-tent.jpg",
     summary:
       "Full-scale animal programming for festivals, corporate events, and fundraisers.",
     description:
@@ -337,7 +337,7 @@ export const programs = [
     slug: "tiny-tots-zookeeper",
     name: "Tiny Tots Zookeeper",
     ageRange: "Ages 2-4",
-    icon: "🐣",
+    icon: "/images/icons/icon-chick.jpg",
     summary: "A gentle, sensory-friendly first introduction to animal care.",
     description:
       "A caregiver-and-child class built around songs, textures, and short animal visits. No prior experience needed — this is many kids' first program.",
@@ -349,7 +349,7 @@ export const programs = [
     slug: "lil-zookeeper",
     name: "Lil' Zookeeper",
     ageRange: "Ages 5-6",
-    icon: "🐥",
+    icon: "/images/icons/icon-chick.jpg",
     summary: "Hands-on basics of feeding, habitats, and gentle handling.",
     description:
       "A 45-minute weekly class covering simple animal care tasks under close keeper supervision. This program runs at capacity most seasons.",
@@ -361,7 +361,7 @@ export const programs = [
     slug: "junior-zookeeper",
     name: "Junior Zookeeper",
     ageRange: "Ages 7-10",
-    icon: "🦉",
+    icon: "/images/icons/icon-owl.jpg",
     summary:
       "A multi-week series covering diet prep, enrichment, and habitat care.",
     description:
@@ -374,7 +374,7 @@ export const programs = [
     slug: "teen-zookeeper",
     name: "Teen Zookeeper",
     ageRange: "Ages 11-15",
-    icon: "🦅",
+    icon: "/images/icons/icon-eagle.jpg",
     summary:
       "Our most advanced pre-professional track, including a keeper shadow day.",
     description:
@@ -453,7 +453,7 @@ export const blogPosts = [
     author: "Marine Care Team",
     date: "2026-08-14",
     readMinutes: 4,
-    icon: "🐟",
+    icon: "/images/icons/icon-ray.jpg",
     body: [
       "Nova arrived at LegaSea in early spring after being found stranded in shallow water following a storm. After several weeks of rehabilitation with our marine care team, she's now a full-time resident of the Deep Tank Theater touch pool.",
       "Cownose rays are gentle, curious animals, and Nova has quickly become one of the more food-motivated residents in the pool — keepers say she's usually first in line at feeding time.",
@@ -469,7 +469,7 @@ export const blogPosts = [
     author: "Reptarium Keeper Staff",
     date: "2026-07-30",
     readMinutes: 6,
-    icon: "🦎",
+    icon: "/images/icons/icon-lizard.jpg",
     body: [
       "Every keeper who works with venomous species at The Reptarium completes months of shadow training before ever handling an animal solo. Safety protocol governs everything from enclosure design to how tools are stored.",
       "Our venom lab window lets guests watch real husbandry work — feeding, health checks, and enclosure maintenance — from a safe, glassed-in vantage point.",
@@ -485,7 +485,7 @@ export const blogPosts = [
     author: "Conservation Team",
     date: "2026-07-02",
     readMinutes: 5,
-    icon: "🌊",
+    icon: "/images/icons/icon-wave.jpg",
     body: [
       "This summer, our coral propagation program successfully out-planted its first batch of nursery-grown staghorn coral fragments in partnership with a regional reef restoration project.",
       "Meanwhile, the Mangrove Walk exhibit continues to support a wetland restoration partnership, with keeper-led guest talks happening most weekends.",
@@ -500,7 +500,7 @@ export const blogPosts = [
     author: "Events Team",
     date: "2026-06-20",
     readMinutes: 3,
-    icon: "🏮",
+    icon: "/images/icons/icon-lantern.jpg",
     body: [
       "Summer Night Lights brought guests back after dark for a glow-lantern walk through Mangrove Walk and a special nighttime feeding at Deep Tank Theater.",
       "Nocturnal reptile activity in The Reptarium was a highlight — several guests got to see species that are rarely active during normal daytime hours.",
@@ -513,35 +513,35 @@ export const stickers = [
     id: "clownfish",
     zoneSlug: "reef-hall",
     name: "Hidden Clownfish",
-    icon: "🐠",
+    icon: "/images/icons/icon-fish.jpg",
     hint: "Near the reef viewing wall",
   },
   {
     id: "gecko",
     zoneSlug: "reptarium",
     name: "Hidden Gecko",
-    icon: "🦎",
+    icon: "/images/icons/icon-lizard.jpg",
     hint: "By the venom lab window",
   },
   {
     id: "frog",
     zoneSlug: "mangrove-walk",
     name: "Hidden Frog",
-    icon: "🐸",
+    icon: "/images/icons/icon-frog.jpg",
     hint: "Along the frog grotto rail",
   },
   {
     id: "ray",
     zoneSlug: "deep-tank",
     name: "Hidden Ray",
-    icon: "🐟",
+    icon: "/images/icons/icon-ray.jpg",
     hint: "Beside the touch pool",
   },
   {
     id: "crab",
     zoneSlug: "kids-cove",
     name: "Hidden Crab",
-    icon: "🦀",
+    icon: "/images/icons/icon-crab.jpg",
     hint: "Near the splash pad entrance",
   },
 ];

@@ -15,6 +15,7 @@ export default function PartiesPage() {
         subtitle="From a birthday room to a full offsite event, pick the package below and request your date."
         tone="reptile"
         crumbLabel="Parties & Groups"
+        image="/images/BirthdayPartyHero.png"
       />
 
       <div className="container section">
@@ -37,7 +38,7 @@ export default function PartiesPage() {
                 </span>
                 <span
                   style={{
-                    color: "var(--ink-500)",
+                    color: "var(--glass-text-dim)",
                     fontSize: "0.9rem",
                   }}
                 >

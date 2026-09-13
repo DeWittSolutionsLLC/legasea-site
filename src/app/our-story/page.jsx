@@ -57,7 +57,6 @@ export default function OurStoryPage() {
             marginBottom: 40,
             display: "flex",
             justifyContent: "center",
-            background: "var(--sand-200)",
           }}
         >
           <Image
@@ -73,6 +72,7 @@ export default function OurStoryPage() {
         </div>
 
         <div
+          
           style={{
             display: "flex",
             flexDirection: "column",
@@ -81,16 +81,18 @@ export default function OurStoryPage() {
         >
           {milestones.map((m) => (
             <div
+              className="card"
               key={m.year}
               style={{
                 display: "flex",
                 gap: 20,
+                padding: "22px 24px",
               }}
             >
               <div
                 style={{
                   fontFamily: "var(--font-display)",
-                  color: "var(--coral-600)",
+                  color: "var(--coral-400)",
                   fontWeight: 700,
                   minWidth: 70,
                   fontSize: "1.05rem",
@@ -102,6 +104,7 @@ export default function OurStoryPage() {
                 <h3
                   style={{
                     marginBottom: 4,
+                    color: "var(--glass-text)",
                   }}
                 >
                   {m.title}
@@ -109,7 +112,7 @@ export default function OurStoryPage() {
                 <p
                   style={{
                     margin: 0,
-                    color: "var(--ink-600)",
+                    color: "var(--glass-text-dim)",
                   }}
                 >
                   {m.text}
@@ -126,11 +129,18 @@ export default function OurStoryPage() {
             textAlign: "center",
           }}
         >
-          <h2>Come meet the animals behind the story</h2>
+          <h2
+            style={{
+              color: "var(--glass-text)",
+            }}
+          >
+            Come meet the animals behind the story
+          </h2>
           <p
             className="lede"
             style={{
               margin: "0 auto 20px",
+              color: "var(--glass-text-dim)",
             }}
           >
             Every rescue story continues on-site — ask any keeper about the

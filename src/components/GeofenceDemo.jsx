@@ -61,7 +61,7 @@ export default function GeofenceDemo() {
       </h3>
       <p
         style={{
-          color: "var(--ink-500)",
+          color: "var(--glass-text-dim)",
           marginBottom: 16,
         }}
       >

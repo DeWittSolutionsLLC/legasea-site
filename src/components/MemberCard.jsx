@@ -65,11 +65,20 @@ export default function MemberCard() {
         </div>
         <span
           style={{
-            fontSize: "1.8rem",
+            width: 32,
+            height: 32,
+            borderRadius: "50%",
+            overflow: "hidden",
+            display: "block",
           }}
           aria-hidden="true"
         >
-          🦺
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/icons/icon-vest.jpg"
+            alt=""
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
         </span>
       </div>
 

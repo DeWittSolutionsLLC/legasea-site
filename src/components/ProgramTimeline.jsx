@@ -6,15 +6,14 @@ export default function ProgramTimeline({ steps }) {
       {steps.map((step) => (
         <div className={styles.step} key={step.href}>
           <div className={styles.node} aria-hidden="true">
-            {step.icon}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={step.icon} alt="" />
           </div>
           <Link href={step.href} className={styles.card}>
-            {step.image && (
-              <div className={styles.media}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={step.image} alt="" loading="lazy" />
-              </div>
-            )}
+            <div className={styles.media}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={step.image ?? step.icon} alt="" loading="lazy" />
+            </div>
             <div className={styles.body}>
               <h3 className={styles.title}>{step.title}</h3>
               <p className={styles.description}>{step.description}</p>

@@ -14,7 +14,15 @@ export default function ProgramRegister({ program }) {
       <div className={styles.widget}>
         <div className={styles.confirmWrap}>
           <div className={styles.confirmIcon}>
-            {program.waitlist ? "📋" : "✅"}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={
+                program.waitlist
+                  ? "/images/icons/icon-clipboard.jpg"
+                  : "/images/icons/icon-check.jpg"
+              }
+              alt=""
+            />
           </div>
           <h3
             style={{
@@ -27,7 +35,7 @@ export default function ProgramRegister({ program }) {
           </h3>
           <p
             style={{
-              color: "var(--ink-500)",
+              color: "var(--glass-text-dim)",
               margin: 0,
             }}
           >
@@ -54,7 +62,7 @@ export default function ProgramRegister({ program }) {
 
       <p
         style={{
-          color: "var(--ink-600)",
+          color: "var(--glass-text-dim)",
           marginBottom: 16,
         }}
       >
@@ -66,13 +74,12 @@ export default function ProgramRegister({ program }) {
           className="card"
           style={{
             padding: 14,
-            background: "var(--coral-100)",
             marginBottom: 16,
           }}
         >
           <strong
             style={{
-              color: "var(--coral-600)",
+              color: "var(--coral-400)",
             }}
           >
             Currently full
@@ -81,7 +88,7 @@ export default function ProgramRegister({ program }) {
             style={{
               margin: "4px 0 0",
               fontSize: "0.88rem",
-              color: "var(--ink-600)",
+              color: "var(--glass-text-dim)",
             }}
           >
             Join the waitlist below — we&apos;ll email you the moment a spot

@@ -12,14 +12,8 @@ export default function FeaturedPanel({
   return (
     <Link href={href} className={styles.panel}>
       <div className={styles.media}>
-        {image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={image} alt="" />
-        ) : (
-          <div className={styles.mediaIcon} aria-hidden="true">
-            {icon}
-          </div>
-        )}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={image ?? icon} alt="" />
       </div>
       <div className={styles.body}>
         {tag}

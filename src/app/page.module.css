@@ -238,7 +238,13 @@
 }
 
 .zoneBand--underwater .zoneBandOverlay {
-  background: linear-gradient(180deg, var(--abyss-950) 0%, rgba(4, 32, 44, 0.82) 30%, rgba(4, 32, 44, 0.9) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--abyss-950) 0%,
+    rgba(4, 32, 44, 0.82) 30%,
+    rgba(4, 32, 44, 0.9) 75%,
+    var(--canopy-950) 100%
+  );
 }
 
 .zoneBand--jungle {
@@ -392,8 +398,17 @@
 }
 
 .zoneChipIcon {
-  font-size: 1.7rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
   margin-bottom: 6px;
+}
+
+.zoneChipIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---------------- Stamp hunt teaser ---------------- */

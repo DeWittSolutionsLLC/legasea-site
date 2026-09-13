@@ -136,3 +136,62 @@ export function IconCompass({ size = 18, className }) {
     </svg>
   );
 }
+export function IconInstagram({ size = 18, className }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      className={className}
+      {...base}
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+export function IconTikTok({ size = 18, className }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      className={className}
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M15.5 2h3a5.4 5.4 0 0 0 3.5 4.9v3.1a8.6 8.6 0 0 1-3.5-.9v6.4a6.4 6.4 0 1 1-6.4-6.4c.3 0 .6 0 .9.06v3.2a3.2 3.2 0 1 0 2.2 3.05V2Z" />
+    </svg>
+  );
+}
+export function IconYouTube({ size = 18, className }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      className={className}
+      {...base}
+      aria-hidden="true"
+    >
+      <rect x="2.5" y="5.5" width="19" height="13" rx="4" />
+      <path d="M10.5 9.2v5.6l5-2.8-5-2.8Z" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+export function IconFacebook({ size = 18, className }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      className={className}
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M14.5 21v-7.6h2.6l.4-3H14.5V8.3c0-.87.24-1.46 1.5-1.46h1.6V4.14C17.3 4.1 16.34 4 15.2 4c-2.33 0-3.93 1.42-3.93 4.03v2.37H8.7v3h2.57V21h3.23Z" />
+    </svg>
+  );
+}

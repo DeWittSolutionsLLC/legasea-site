@@ -23,20 +23,19 @@ export default function StampsPage() {
           style={{
             padding: 18,
             marginBottom: 28,
-            background: "var(--ocean-100)",
           }}
         >
           <strong
             style={{
-              color: "var(--ocean-800)",
+              color: "var(--coral-400)",
             }}
           >
-            👀 This is a live demo
+            This is a live demo
           </strong>
           <p
             style={{
               margin: "6px 0 0",
-              color: "var(--ink-600)",
+              color: "var(--glass-text-dim)",
             }}
           >
             On-site, each sticker has a real QR code — scanning it logs the

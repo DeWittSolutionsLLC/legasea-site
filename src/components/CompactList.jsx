@@ -7,12 +7,8 @@ export default function CompactList({ items }) {
       {items.map((item) => (
         <Link href={item.href} key={item.href} className={styles.row}>
           <div className={styles.media}>
-            {item.image ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={item.image} alt="" loading="lazy" />
-            ) : (
-              <span aria-hidden="true">{item.icon}</span>
-            )}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={item.image ?? item.icon} alt="" loading="lazy" />
           </div>
           <div className={styles.content}>
             <p className={styles.title}>{item.title}</p>

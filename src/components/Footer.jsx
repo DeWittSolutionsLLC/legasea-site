@@ -2,46 +2,52 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import NewsletterForm from "./NewsletterForm";
+import {
+  IconInstagram,
+  IconTikTok,
+  IconYouTube,
+  IconFacebook,
+} from "./icons";
 const socials = [
   {
     label: "Instagram",
-    icon: "📸",
-    href: "https://instagram.com",
+    icon: IconInstagram,
+    href: "http://instagram.com/legaseaaquarium",
   },
   {
     label: "TikTok",
-    icon: "🎵",
+    icon: IconTikTok,
     href: "https://tiktok.com",
   },
   {
     label: "YouTube",
-    icon: "▶️",
-    href: "https://youtube.com",
+    icon: IconYouTube,
+    href: "https://www.youtube.com/brianbarczyk",
   },
   {
     label: "Facebook",
-    icon: "👍",
-    href: "https://facebook.com",
+    icon: IconFacebook,
+    href: "https://www.facebook.com/legaseaaquarium",
   },
 ];
 const trustBadges = [
   {
-    icon: "⭐",
+    icon: "/images/icons/icon-star.jpg",
     title: "4.8 / 5 average rating",
     subtitle: "1,200+ guest reviews",
   },
   {
-    icon: "🏅",
+    icon: "/images/icons/icon-medal.jpg",
     title: "USDA licensed facility",
     subtitle: "Animal exhibitor",
   },
   {
-    icon: "🌱",
+    icon: "/images/icons/icon-sprout.jpg",
     title: "Family-owned since 2011",
     subtitle: "Animal-rescue-first",
   },
   {
-    icon: "🤝",
+    icon: "/images/icons/icon-handshake.jpg",
     title: "10,000+ guests a year",
     subtitle: "And counting",
   },
@@ -75,7 +81,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span aria-hidden="true">{s.icon}</span>
+                <s.icon size={18} />
               </a>
             ))}
           </div>
@@ -128,7 +134,8 @@ export default function Footer() {
           {trustBadges.map((b) => (
             <div className={styles.trustBadge} key={b.title}>
               <span className={styles.trustIcon} aria-hidden="true">
-                {b.icon}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={b.icon} alt="" />
               </span>
               <span className={styles.trustText}>
                 <strong>{b.title}</strong>

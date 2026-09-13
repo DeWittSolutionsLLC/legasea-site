@@ -10,12 +10,19 @@ export default function NotFound() {
     >
       <div
         style={{
-          fontSize: "3.4rem",
-          marginBottom: 10,
+          width: 96,
+          height: 96,
+          borderRadius: "50%",
+          overflow: "hidden",
+          margin: "0 auto 10px",
         }}
-        aria-hidden="true"
       >
-        🐠💨
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/icons/icon-fish.jpg"
+          alt=""
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
       </div>
       <h1>This page swam away</h1>
       <p

@@ -15,46 +15,35 @@ export default function AnimalSpotlight({
   const [open, setOpen] = useState(false);
   return (
     <section className={styles.wrap}>
-      <div className={styles.bg}>
+      <div className={styles.media}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/foliage/aquaticbackground.webp"
-          alt=""
-          className={styles.bgImg}
-        />
-        <div className={styles.bgOverlay} />
+        <img src={photo} alt="" />
       </div>
-      <CausticLight />
-      <div className="container">
-        <div className={styles.card}>
-          <div className={styles.media}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={photo} alt="" />
-            <span className={styles.badge}>{badge}</span>
-          </div>
-          <div className={styles.body}>
-            <h2 className={`${styles.name} display`}>{name}</h2>
-            <p className={styles.tagline}>{tagline}</p>
-            <p className={styles.teaser}>{teaser}</p>
+      <div className={styles.body}>
+        <CausticLight />
+        <div className={styles.bodyInner}>
+          <span className={styles.badge}>{badge}</span>
+          <h2 className={`${styles.name} display`}>{name}</h2>
+          <p className={styles.tagline}>{tagline}</p>
+          <p className={styles.teaser}>{teaser}</p>
 
-            <button
-              type="button"
-              className={styles.toggle}
-              onClick={() => setOpen((v) => !v)}
-              aria-expanded={open}
-            >
-              {open ? "Show less" : `Read ${name.split(" ")[0]}'s full story`}
-              <span className={styles.chevron} data-open={open}>
-                <IconChevronDown size={14} />
-              </span>
-            </button>
+          <button
+            type="button"
+            className={styles.toggle}
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+          >
+            {open ? "Show less" : `Read ${name.split(" ")[0]}'s full story`}
+            <span className={styles.chevron} data-open={open}>
+              <IconChevronDown size={14} />
+            </span>
+          </button>
 
-            <div className={styles.expand} data-open={open}>
-              <div className={styles.expandInner}>
-                {bio.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
+          <div className={styles.expand} data-open={open}>
+            <div className={styles.expandInner}>
+              {bio.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
           </div>
         </div>

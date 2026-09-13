@@ -8,7 +8,11 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  background: white;
+  background: rgba(4, 32, 44, 0.58);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--glass-text);
   border-radius: var(--radius-md);
   padding: 16px 20px;
   box-shadow: var(--shadow-sm);
@@ -17,7 +21,7 @@
 
 .row[data-live="true"] {
   border-left-color: var(--coral-500);
-  background: var(--coral-100);
+  background: rgba(217, 79, 43, 0.32);
 }
 
 .row[data-next="true"] {
@@ -26,7 +30,7 @@
 
 .time {
   font-family: var(--font-display);
-  color: var(--ocean-800);
+  color: var(--coral-400);
   min-width: 84px;
   font-size: 1.05rem;
 }
@@ -37,13 +41,13 @@
 
 .name {
   font-family: var(--font-display);
-  color: var(--ocean-900);
+  color: var(--glass-text);
   margin-bottom: 2px;
 }
 
 .meta {
   font-size: 0.85rem;
-  color: var(--ink-500);
+  color: var(--glass-text-dim);
 }
 
 .badge {

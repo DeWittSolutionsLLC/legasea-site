@@ -1,5 +1,11 @@
 import PageHero from "@/components/PageHero";
 import NewsletterForm from "@/components/NewsletterForm";
+import {
+  IconInstagram,
+  IconTikTok,
+  IconYouTube,
+  IconFacebook,
+} from "@/components/icons";
 export const metadata = {
   title: "Connect",
   description:
@@ -8,31 +14,31 @@ export const metadata = {
 const channels = [
   {
     label: "Instagram",
-    icon: "📸",
+    icon: IconInstagram,
     handle: "@legaseaaquarium",
-    href: "https://instagram.com",
+    href: "http://instagram.com/legaseaaquarium",
   },
   {
     label: "TikTok",
-    icon: "🎵",
+    icon: IconTikTok,
     handle: "@legaseaaquarium",
     href: "https://tiktok.com",
   },
   {
     label: "YouTube",
-    icon: "▶️",
+    icon: IconYouTube,
     handle: "LegaSea Aquarium & Reptarium",
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/brianbarczyk",
   },
   {
     label: "Facebook",
-    icon: "👍",
+    icon: IconFacebook,
     handle: "LegaSea Aquarium & The Reptarium",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/legaseaaquarium",
   },
   {
     label: "Blog",
-    icon: "📝",
+    icon: "/images/icons/icon-notepad.jpg",
     handle: "Animal spotlights & updates",
     href: "/blog",
   },
@@ -41,11 +47,71 @@ export default function ConnectPage() {
   return (
     <>
       <PageHero
-        eyebrow="Connect"
-        title="Every channel, one link"
-        subtitle="Follow along, or grab this page's link for print materials, email signatures, and QR codes."
+        eyebrow="Follow Along"
+        title="Connect"
+        subtitle="Stay wild. Stay connected."
         crumbLabel="Connect"
-      />
+        image="/images/ConnectHero.png"
+        backgroundImage="/images/foliage/aquaticbackground.webp"
+      >
+        <p
+          style={{
+            color: "var(--glass-text-dim)",
+            maxWidth: "44ch",
+            margin: "10px 0 20px",
+          }}
+        >
+          Follow LegaSea for animal encounters, behind-the-scenes moments, new
+          arrivals, events, and everything happening around the aquarium and
+          zoo.
+        </p>
+
+        <div
+          style={{
+            display: "flex",
+            gap: 10,
+            marginBottom: 18,
+          }}
+        >
+          {channels
+            .filter((c) => c.href.startsWith("http"))
+            .map((c) => (
+              <a
+                key={c.label}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={c.label}
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  background: "var(--glass-bg-strong)",
+                  border: "1px solid var(--glass-border)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "white",
+                }}
+              >
+                <c.icon size={20} />
+              </a>
+            ))}
+        </div>
+
+        <p
+          style={{
+            fontFamily: "var(--font-accent)",
+            fontSize: "0.85rem",
+            fontWeight: 700,
+            letterSpacing: "0.4px",
+            color: "var(--reef-glow)",
+            margin: 0,
+          }}
+        >
+          #LegaSeaAquarium &nbsp; #TheReptarium &nbsp; #GetCloserToWild
+        </p>
+      </PageHero>
 
       <div
         className="container section"
@@ -80,10 +146,25 @@ export default function ConnectPage() {
               <span
                 style={{
                   fontSize: "1.8rem",
+                  display: "flex",
                 }}
                 aria-hidden="true"
               >
-                {c.icon}
+                {typeof c.icon === "string" ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={c.icon}
+                    alt=""
+                    style={{
+                      width: 26,
+                      height: 26,
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                    }}
+                  />
+                ) : (
+                  <c.icon size={26} />
+                )}
               </span>
               <span
                 style={{
@@ -100,7 +181,7 @@ export default function ConnectPage() {
                 </strong>
                 <span
                   style={{
-                    color: "var(--ink-500)",
+                    color: "var(--glass-text-dim)",
                     fontSize: "0.88rem",
                   }}
                 >
@@ -110,7 +191,7 @@ export default function ConnectPage() {
               <span
                 aria-hidden="true"
                 style={{
-                  color: "var(--ink-300)",
+                  color: "var(--glass-text-dim)",
                 }}
               >
                 →
@@ -135,7 +216,7 @@ export default function ConnectPage() {
           </h3>
           <p
             style={{
-              color: "var(--ink-500)",
+              color: "var(--glass-text-dim)",
               marginBottom: 18,
             }}
           >

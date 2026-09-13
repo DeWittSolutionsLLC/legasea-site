@@ -15,6 +15,7 @@ export default function ProgramsPage() {
         subtitle="Hands-on animal care classes that grow with your kid — from a first sensory visit to a pre-professional keeper shadow day."
         tone="reptile"
         crumbLabel="Zookeeper Programs"
+        image="/images/ZookeeperHero.png"
       />
 
       <div className="container section">

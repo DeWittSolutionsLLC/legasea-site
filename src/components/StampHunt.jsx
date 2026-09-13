@@ -97,18 +97,19 @@ export default function StampHunt() {
               data-found={isFound}
             >
               <div className={styles.stickerIcon} aria-hidden="true">
-                {sticker.icon}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={sticker.icon} alt="" />
               </div>
               <strong
                 style={{
                   fontFamily: "var(--font-display)",
-                  color: "var(--ocean-800)",
+                  color: "var(--glass-text)",
                 }}
               >
                 {sticker.name}
               </strong>
               <p className={styles.hint}>
-                {zone ? `${zone.icon} ${zone.name} — ` : ""}
+                {zone ? `${zone.name} — ` : ""}
                 {sticker.hint}
               </p>
               {isFound ? (
@@ -178,7 +179,7 @@ export default function StampHunt() {
         </h4>
         <p
           style={{
-            color: "var(--ink-500)",
+            color: "var(--glass-text-dim)",
             marginBottom: 14,
           }}
         >
@@ -226,7 +227,7 @@ export default function StampHunt() {
           <p
             style={{
               marginTop: 10,
-              color: "var(--coral-600)",
+              color: "var(--coral-400)",
               fontWeight: 600,
             }}
           >

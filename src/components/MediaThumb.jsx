@@ -6,27 +6,6 @@ export default function MediaThumb({
   background,
   aspectRatio,
 }) {
-  if (image) {
-    return (
-      <div
-        className="card-media"
-        style={{
-          background,
-          aspectRatio,
-        }}
-      >
-        <Image
-          src={image}
-          alt={alt}
-          fill
-          style={{
-            objectFit: "cover",
-          }}
-          sizes="(max-width: 700px) 100vw, 33vw"
-        />
-      </div>
-    );
-  }
   return (
     <div
       className="card-media"
@@ -34,9 +13,16 @@ export default function MediaThumb({
         background,
         aspectRatio,
       }}
-      aria-hidden="true"
     >
-      {icon}
+      <Image
+        src={image ?? icon}
+        alt={alt}
+        fill
+        style={{
+          objectFit: "cover",
+        }}
+        sizes="(max-width: 700px) 100vw, 33vw"
+      />
     </div>
   );
 }

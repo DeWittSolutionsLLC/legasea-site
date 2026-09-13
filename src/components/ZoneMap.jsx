@@ -43,6 +43,7 @@ export default function ZoneMap() {
           <h2
             style={{
               marginBottom: 4,
+              color: "var(--sand-100)",
             }}
           >
             Facility Map
@@ -50,7 +51,7 @@ export default function ZoneMap() {
           <p
             style={{
               margin: 0,
-              color: "var(--ink-500)",
+              color: "var(--sand-300)",
             }}
           >
             Tap a zone to see what&apos;s there, or start the suggested
@@ -100,8 +101,22 @@ export default function ZoneMap() {
       </div>
 
       <div className={styles.mapWrap}>
-        <span className={styles.youAreHere}>
-          📍 You are here: Welcome Plaza
+        <span
+          className={styles.youAreHere}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/icons/icon-pin.jpg"
+            alt=""
+            style={{
+              width: 14,
+              height: 14,
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+          You are here: Welcome Plaza
         </span>
 
         {tourActive && (
@@ -134,14 +149,9 @@ export default function ZoneMap() {
               data-active={selected === z.slug}
               onClick={() => setSelected(z.slug)}
             >
-              <span
-                className={styles.pinDot}
-                style={{
-                  color: z.color,
-                }}
-                aria-hidden="true"
-              >
-                {z.icon}
+              <span className={styles.pinDot} aria-hidden="true">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={z.icon} alt="" />
                 {tourActive && tourIndex >= 0 && (
                   <span className={styles.pinOrder}>{tourIndex + 1}</span>
                 )}
@@ -153,8 +163,22 @@ export default function ZoneMap() {
       </div>
 
       <div className={styles.detailCard} id={zone.slug}>
-        <span className="eyebrow eyebrow--ocean">
-          {zone.icon} {zone.name}
+        <span
+          className="eyebrow eyebrow--ocean"
+          style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={zone.icon}
+            alt=""
+            style={{
+              width: 16,
+              height: 16,
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+          {zone.name}
         </span>
         <p
           style={{
@@ -200,7 +224,18 @@ export default function ZoneMap() {
                   href={`/experience/${e.slug}`}
                   className="btn btn-outline btn-sm"
                 >
-                  {e.icon} {e.name}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={e.icon}
+                    alt=""
+                    style={{
+                      width: 18,
+                      height: 18,
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                    }}
+                  />
+                  {e.name}
                 </Link>
               ))}
             </div>
@@ -219,11 +254,19 @@ export default function ZoneMap() {
           >
             <div
               style={{
-                fontSize: "1.4rem",
+                width: 28,
+                height: 28,
+                borderRadius: "50%",
+                overflow: "hidden",
               }}
               aria-hidden="true"
             >
-              {z.icon}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={z.icon}
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
             </div>
             <strong
               style={{

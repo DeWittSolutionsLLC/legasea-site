@@ -37,9 +37,23 @@ export default async function ExperiencePage(props) {
               className="tag"
               style={{
                 marginBottom: 10,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 5,
               }}
             >
-              📍 {zone.name}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/icons/icon-pin.jpg"
+                alt=""
+                style={{
+                  width: 14,
+                  height: 14,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                }}
+              />
+              {zone.name}
             </span>
           )}
           <h1
@@ -59,7 +73,23 @@ export default async function ExperiencePage(props) {
               margin: "18px 0",
             }}
           >
-            <span className="tag tag--coral">⏱ {experience.duration}</span>
+            <span
+              className="tag tag--coral"
+              style={{ display: "inline-flex", alignItems: "center", gap: 5 }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/icons/icon-stopwatch.jpg"
+                alt=""
+                style={{
+                  width: 14,
+                  height: 14,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                }}
+              />
+              {experience.duration}
+            </span>
             {experience.ageNote && (
               <span className="tag">{experience.ageNote}</span>
             )}
@@ -70,21 +100,34 @@ export default async function ExperiencePage(props) {
               className="card"
               style={{
                 padding: 18,
-                background: "var(--ocean-100)",
                 marginTop: 20,
               }}
             >
               <strong
                 style={{
-                  color: "var(--ocean-800)",
+                  color: "var(--coral-400)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
                 }}
               >
-                📱 Scanned this from a station QR code?
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/icons/icon-phone.jpg"
+                  alt=""
+                  style={{
+                    width: 18,
+                    height: 18,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                  }}
+                />
+                Scanned this from a station QR code?
               </strong>
               <p
                 style={{
                   margin: "6px 0 0",
-                  color: "var(--ink-600)",
+                  color: "var(--glass-text-dim)",
                 }}
               >
                 You&apos;re in the right place — pick a time on the right and

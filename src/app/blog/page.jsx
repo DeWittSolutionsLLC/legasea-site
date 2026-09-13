@@ -64,7 +64,7 @@ export default function BlogPage() {
                 <span
                   style={{
                     fontSize: "0.8rem",
-                    color: "var(--ink-500)",
+                    color: "var(--glass-text-dim)",
                     textAlign: "right",
                   }}
                 >
@@ -81,15 +81,12 @@ export default function BlogPage() {
           className="card"
           style={{
             padding: 32,
-            background: "var(--ocean-900)",
-            color: "white",
             textAlign: "center",
             marginTop: 56,
           }}
         >
           <h3
             style={{
-              color: "white",
               marginBottom: 6,
             }}
           >
@@ -97,7 +94,7 @@ export default function BlogPage() {
           </h3>
           <p
             style={{
-              color: "var(--ocean-200)",
+              color: "var(--glass-text-dim)",
               marginBottom: 18,
             }}
           >

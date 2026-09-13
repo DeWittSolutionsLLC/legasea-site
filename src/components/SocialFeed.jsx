@@ -40,7 +40,7 @@ export default function SocialFeed() {
       {POSTS.map((post, i) => (
         <a
           key={i}
-          href="https://instagram.com"
+          href="http://instagram.com/legaseaaquarium"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.post}
@@ -51,7 +51,21 @@ export default function SocialFeed() {
           <span className={styles.overlay}>
             <p className={styles.caption}>{post.caption}</p>
             <span className={styles.meta}>
-              <span aria-hidden="true">❤️</span> {post.likes}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/icons/icon-heart.jpg"
+                alt=""
+                style={{
+                  width: 14,
+                  height: 14,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                  marginRight: 4,
+                }}
+              />
+              {post.likes}
             </span>
           </span>
         </a>

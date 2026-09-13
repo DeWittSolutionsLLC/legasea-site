@@ -30,7 +30,21 @@ export default function ShowScheduleList() {
             <div className={styles.body}>
               <div className={styles.name}>{show.name}</div>
               <div className={styles.meta}>
-                📍 {show.zone} · {show.durationMinutes} min · {show.description}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/icons/icon-pin.jpg"
+                  alt=""
+                  style={{
+                    width: 13,
+                    height: 13,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    display: "inline-block",
+                    verticalAlign: "middle",
+                    marginRight: 4,
+                  }}
+                />
+                {show.zone} · {show.durationMinutes} min · {show.description}
               </div>
             </div>
             {live && <span className={styles.badge}>Happening now</span>}
