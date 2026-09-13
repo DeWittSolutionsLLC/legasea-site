@@ -1,0 +1,161 @@
+.footer {
+  background: var(--ocean-900);
+  color: var(--ocean-100);
+  margin-top: 80px;
+}
+
+.top {
+  padding: 56px 20px 32px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+  gap: 32px;
+}
+
+@media (max-width: 800px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.brandMark {
+  height: 30px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.tagline {
+  color: var(--ocean-200);
+  font-size: 0.92rem;
+  max-width: 32ch;
+}
+
+.heading {
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--coral-400);
+  margin-bottom: 14px;
+}
+
+.linkList li {
+  margin-bottom: 8px;
+}
+
+.linkList a {
+  color: var(--ocean-100);
+  font-size: 0.94rem;
+}
+
+.linkList a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.socialRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.socialBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+
+.socialBtn:hover {
+  background: var(--coral-500);
+}
+
+.trustRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 22px 20px;
+}
+
+.trustInner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.trustBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px 8px 12px;
+  flex: 1 1 200px;
+}
+
+.trustIcon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.trustText strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.trustText span {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--ocean-300);
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 18px 20px 28px;
+}
+
+.bottomInner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--ocean-300);
+}
+
+.bottomInner a {
+  color: var(--ocean-200);
+}
+
+.bottomInner a:hover {
+  color: white;
+}

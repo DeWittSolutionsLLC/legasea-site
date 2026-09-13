@@ -1,0 +1,91 @@
+.wrap {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 95;
+}
+
+@media (max-width: 700px) {
+  .wrap {
+    bottom: 90px;
+  }
+}
+
+.toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--ocean-700);
+  color: white;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle:hover {
+  background: var(--ocean-800);
+}
+
+.panel {
+  position: absolute;
+  bottom: 62px;
+  left: 0;
+  width: 250px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  border: 1px solid var(--sand-300);
+}
+
+.panelTitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--ocean-800);
+  margin-bottom: 10px;
+}
+
+.row {
+  margin-bottom: 12px;
+}
+
+.rowLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.optionRow {
+  display: flex;
+  gap: 6px;
+}
+
+.optionBtn {
+  flex: 1;
+  padding: 8px 6px;
+  font-size: 0.82rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--sand-300);
+  background: var(--sand-100);
+  cursor: pointer;
+}
+
+.optionBtn[data-active="true"] {
+  background: var(--ocean-600);
+  border-color: var(--ocean-600);
+  color: white;
+}
+
+.link {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ocean-700);
+  margin-top: 10px;
+  text-decoration: underline;
+}

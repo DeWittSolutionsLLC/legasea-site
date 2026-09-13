@@ -1,0 +1,463 @@
+/* =====================================================================
+   Home — cinematic, photo-driven, zoned "jungle vs. underwater" design.
+===================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #030906;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 4;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 120px 24px 130px;
+  width: 100%;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  color: var(--glass-text);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-accent-hand);
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.heroBadge svg {
+  color: var(--canopy-glow);
+}
+
+.heroTitle {
+  font-size: clamp(2.6rem, 6.4vw, 4.6rem);
+  color: var(--white);
+  max-width: 18ch;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: var(--canopy-glow);
+}
+
+.heroSub {
+  font-size: 1.15rem;
+  max-width: 50ch;
+  color: var(--glass-text-dim);
+  margin-bottom: 34px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btnGlow {
+  background: linear-gradient(135deg, var(--coral-500), var(--coral-600));
+  color: white;
+  box-shadow: 0 8px 30px rgba(242, 104, 60, 0.45);
+}
+
+.btnGlow:hover {
+  box-shadow: 0 10px 36px rgba(242, 104, 60, 0.6);
+}
+
+.btnGlass {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  color: var(--white);
+}
+
+.btnGlass:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.scrollCue {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 4;
+  color: var(--glass-text-dim);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: bob 2.4s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollCue {
+    animation: none;
+  }
+}
+
+/* ---------------- Glass stat bar ---------------- */
+
+.statsRow {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin: 0 0 40px;
+}
+
+@media (max-width: 760px) {
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.statCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  padding: 22px 18px;
+  text-align: center;
+  color: var(--glass-text);
+}
+
+.statCard:first-child {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+.statCard:last-child {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+@media (max-width: 760px) {
+  .statCard:first-child { border-radius: var(--radius-md) 0 0 0; }
+  .statCard:last-child { border-radius: 0 0 var(--radius-md) 0; }
+  .statCard:nth-child(2) { border-radius: 0 var(--radius-md) 0 0; }
+  .statCard:nth-child(3) { border-radius: 0 0 0 var(--radius-md); }
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--canopy-glow);
+  font-weight: 700;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--glass-text-dim);
+}
+
+.leadIn {
+  position: relative;
+  z-index: 5;
+  background: var(--abyss-950);
+  padding: 64px 0 84px;
+}
+
+/* ---------------- Show banner (glass) ---------------- */
+
+.showBanner {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--glass-text);
+}
+
+.showBannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pulseDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--coral-500);
+  animation: pulse 1.6s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(242, 104, 60, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(242, 104, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(242, 104, 60, 0); }
+}
+
+/* ---------------- Zoned encounter bands ---------------- */
+
+.zoneBand {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+  color: var(--glass-text);
+}
+
+.zoneBandBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.zoneBandVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zoneBandOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.zoneBand--underwater .zoneBandOverlay {
+  background: linear-gradient(180deg, var(--abyss-950) 0%, rgba(4, 32, 44, 0.82) 30%, rgba(4, 32, 44, 0.9) 100%);
+}
+
+.zoneBand--jungle {
+  background:
+    radial-gradient(70% 60% at 50% 0%, rgba(226, 192, 115, 0.14), transparent 65%),
+    linear-gradient(180deg, var(--canopy-950) 0%, var(--canopy-900) 55%, var(--canopy-950) 100%);
+}
+
+/* Half Reptarium, half Aquarium */
+.zoneBand--mixed {
+  background: linear-gradient(
+    90deg,
+    var(--canopy-950) 0%,
+    var(--canopy-900) 32%,
+    var(--abyss-900) 68%,
+    var(--abyss-950) 100%
+  );
+}
+
+.zoneBandInner {
+  position: relative;
+  z-index: 3;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.zoneBandHead {
+  max-width: 620px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.zoneBandHead h2 {
+  color: var(--white);
+}
+
+.zoneBandHead p {
+  color: var(--glass-text-dim);
+}
+
+.glassGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 900px) {
+  .glassGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .glassGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.glassCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  display: block;
+}
+
+.glassCard:hover {
+  transform: translateY(-5px);
+  background: var(--glass-bg-strong);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.glassCardBody {
+  padding: 18px 20px 22px;
+}
+
+.glassCardBody h3 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin: 8px 0 6px;
+}
+
+.glassCardBody p {
+  color: var(--glass-text-dim);
+  font-size: 0.9rem;
+  margin: 0 0 10px;
+}
+
+.glassTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--glass-text);
+}
+
+.glassPrice {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--canopy-glow);
+}
+
+.zoneBand--underwater .glassPrice {
+  color: var(--reef-glow);
+}
+
+/* ---------------- Map teaser (bridges ocean -> jungle) ---------------- */
+
+.bridge {
+  position: relative;
+  padding: 90px 0;
+  background: linear-gradient(180deg, var(--canopy-950) 0%, var(--abyss-900) 55%, var(--abyss-950) 100%);
+  color: var(--glass-text);
+}
+
+.zonesStrip {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 6px 2px 18px;
+  scroll-snap-type: x mandatory;
+}
+
+.zoneChip {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  min-width: 160px;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+  color: var(--glass-text);
+}
+
+.zoneChip:hover {
+  transform: translateY(-3px);
+  background: var(--glass-bg-strong);
+}
+
+.zoneChipIcon {
+  font-size: 1.7rem;
+  margin-bottom: 6px;
+}
+
+/* ---------------- Stamp hunt teaser ---------------- */
+
+.stampPanel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: center;
+}
+
+/* ---------------- Blog (editorial) ---------------- */
+
+.blogSection {
+  padding: 90px 0;
+  background: #050a08;
+  color: var(--glass-text);
+}
+
+.blogSection h2 {
+  color: var(--white);
+}
+
+/* ---------------- Final CTA ---------------- */
+
+.ctaBand {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 24px;
+  text-align: center;
+  color: var(--white);
+}
+
+.ctaBandBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ctaBandImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) brightness(0.55);
+}
+
+.ctaBandOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 70% at 50% 30%, rgba(95, 227, 255, 0.16), transparent 60%),
+    linear-gradient(160deg, rgba(2, 12, 18, 0.82) 0%, rgba(4, 32, 44, 0.78) 100%);
+}
+
+.ctaBandInner {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.ctaBand h2 {
+  color: var(--white);
+  font-size: clamp(2rem, 4.4vw, 3rem);
+}

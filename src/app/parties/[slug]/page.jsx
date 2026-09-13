@@ -1,0 +1,71 @@
+import { notFound } from "next/navigation";
+import InquiryForm from "@/components/InquiryForm";
+import DetailHero from "@/components/DetailHero";
+import { findParty, parties } from "@/lib/data";
+import styles from "@/app/experience/[slug]/page.module.css";
+export function generateStaticParams() {
+  return parties.map((p) => ({
+    slug: p.slug,
+  }));
+}
+export async function generateMetadata(props) {
+  const { slug } = await props.params;
+  const party = findParty(slug);
+  if (!party) return {};
+  return {
+    title: party.name,
+    description: party.summary,
+  };
+}
+export default async function PartyDetailPage(props) {
+  const { slug } = await props.params;
+  const party = findParty(slug);
+  if (!party) notFound();
+  return (
+    <div className="container section">
+      <div className={styles.grid}>
+        <div>
+          <DetailHero icon={party.icon} image={party.image} alt={party.name} />
+          <h1>{party.name}</h1>
+          <p className="lede">{party.description}</p>
+
+          <h3>What&apos;s included</h3>
+          <ul
+            style={{
+              display: "grid",
+              gap: 10,
+            }}
+          >
+            {party.includes.map((item) => (
+              <li
+                key={item}
+                style={{
+                  display: "flex",
+                  gap: 10,
+                  alignItems: "flex-start",
+                }}
+              >
+                <span aria-hidden="true">✅</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p
+            className="card-price"
+            style={{
+              fontSize: "1.4rem",
+              marginTop: 20,
+            }}
+          >
+            Starting at ${party.startingPrice}
+          </p>
+        </div>
+
+        <div className={styles.sticky}>
+          <InquiryForm itemName={party.name} />
+        </div>
+      </div>
+    </div>
+  );
+}

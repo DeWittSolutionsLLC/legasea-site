@@ -1,0 +1,74 @@
+.frame {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.buildingWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.buildingImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: brightness(0.55) saturate(0.9);
+}
+
+.imgWrap {
+  position: absolute;
+  inset: -2%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 42%;
+  filter: brightness(1.25) saturate(1.1);
+  transform: scale(1.18) translateY(7%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 1000px 800px at 10% 100%, rgba(2, 4, 3, 0.95), transparent 68%),
+    linear-gradient(180deg, rgba(2, 4, 3, 0.25) 0%, rgba(2, 4, 3, 0.15) 40%, rgba(2, 4, 3, 0.55) 100%);
+}
+
+.topShade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent);
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(ellipse at 50% 40%, transparent 45%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+@media (max-width: 760px) {
+  .img {
+    object-position: 85% 38%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imgWrap {
+    transition: none;
+  }
+}

@@ -1,26 +1,524 @@
-@import "tailwindcss";
+/* ---------------------------------------------------------------
+   LegaSea Aquarium & The Reptarium — Design System
+   Plain CSS (no framework). Tokens + resets + shared utilities.
+----------------------------------------------------------------*/
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette: deep ocean blues + coral accent + reptile green */
+  --ocean-900: #052b3f;
+  --ocean-800: #073b52;
+  --ocean-700: #0b4f6c;
+  --ocean-600: #106688;
+  --ocean-500: #1483ab;
+  --ocean-400: #2ea3cd;
+  --ocean-300: #74c6e3;
+  --ocean-200: #b3e2f0;
+  --ocean-100: #e6f6fb;
+
+  --coral-600: #d94f2b;
+  --coral-500: #f2683c;
+  --coral-400: #ff8a5c;
+  --coral-100: #ffe6da;
+
+  --reptile-600: #2f7a4f;
+  --reptile-500: #3f9863;
+  --reptile-100: #e2f3e8;
+
+  --sand-100: #fdf8ef;
+  --sand-200: #f7ecd7;
+  --sand-300: #efdcb9;
+
+  --ink-900: #12222b;
+  --ink-700: #2c3d46;
+  --ink-500: #5a6d76;
+  --ink-300: #93a5ac;
+
+  --white: #ffffff;
+
+  /* Ultra-realism zone theming: deep, cinematic backdrops for
+     photo/video-driven sections, keyed to an "underwater" or "jungle" area. */
+  --abyss-950: #020c12;
+  --abyss-900: #04202c;
+  --abyss-800: #0c3040;
+  --abyss-700: #14495e;
+  --reef-glow: #5fe3ff;
+  --reef-glow-dim: #1c8fae;
+
+  --canopy-950: #060f09;
+  --canopy-900: #0e2417;
+  --canopy-800: #16351f;
+  --canopy-700: #244d2b;
+  --canopy-glow: #e2c073;
+  --canopy-glow-dim: #8ba565;
+
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-text: #f4f8f7;
+  --glass-text-dim: rgba(244, 248, 247, 0.74);
+
+  --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
+  --font-body: var(--font-futura), "Century Gothic", sans-serif;
+  --font-accent: var(--font-ahkio), sans-serif;
+  --font-accent-hand: var(--font-turncoat), cursive;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(5, 43, 63, 0.06), 0 3px 10px rgba(5, 43, 63, 0.08);
+  --shadow-md: 0 2px 5px rgba(5, 43, 63, 0.08), 0 14px 30px rgba(5, 43, 63, 0.14);
+  --shadow-lg: 0 4px 10px rgba(5, 43, 63, 0.1), 0 30px 60px rgba(5, 43, 63, 0.2);
+
+  --container-width: 1180px;
+
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -8%, rgba(20, 131, 171, 0.07), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 100% 15%, rgba(63, 152, 99, 0.06), transparent 55%),
+    var(--sand-100);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* Text-size accessibility toggle (see AccessibilityToolbar) */
+body[data-text-size="lg"] {
+  font-size: 1.125rem;
+}
+body[data-text-size="xl"] {
+  font-size: 1.28rem;
+}
+
+/* High-contrast accessibility mode */
+body[data-contrast="high"] {
+  --sand-100: #ffffff;
+  --sand-200: #ffffff;
+  --ink-900: #000000;
+  --ink-700: #000000;
+  --ink-500: #101010;
+  --ocean-500: #003b57;
+  --ocean-600: #002a3e;
+  --coral-500: #b23c1c;
+  --coral-600: #8c2e14;
+}
+body[data-contrast="high"] a {
+  text-decoration: underline;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+  color: var(--ocean-900);
+  letter-spacing: 0.5px;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Reduce motion for anyone who asks the OS to */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------- Layout utilities ---------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.section--tight {
+  padding: 40px 0;
+}
+
+.section-head {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.section-head .eyebrow {
+  display: inline-block;
+}
+
+.eyebrow {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--coral-600);
+  background: var(--coral-100);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+}
+
+.eyebrow--ocean {
+  color: var(--ocean-600);
+  background: var(--ocean-100);
+}
+
+.eyebrow--reptile {
+  color: var(--reptile-600);
+  background: var(--reptile-100);
+}
+
+h1.display {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+h2.display {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+}
+
+.lede {
+  font-size: 1.15rem;
+  color: var(--ink-700);
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 900px) {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- Buttons ---------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn-primary {
+  background: var(--coral-500);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--coral-600);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.btn-ocean {
+  background: var(--ocean-600);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-ocean:hover {
+  background: var(--ocean-700);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--ocean-600);
+  color: var(--ocean-700);
+}
+
+.btn-outline:hover {
+  background: var(--ocean-100);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--white);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 0.9rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ---------------- Cards ---------------- */
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(5, 43, 63, 0.06);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(5, 43, 63, 0.1);
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(5, 20, 28, 0.16) 100%);
+  pointer-events: none;
+}
+
+.card-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.card-body h3 {
+  margin-bottom: 0;
+  font-size: 1.15rem;
+}
+
+.card-price {
+  font-family: var(--font-body);
+  color: var(--coral-600);
+  font-weight: 700;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--ocean-100);
+  color: var(--ocean-700);
+  width: fit-content;
+}
+
+.tag--coral {
+  background: var(--coral-100);
+  color: var(--coral-600);
+}
+
+.tag--reptile {
+  background: var(--reptile-100);
+  color: var(--reptile-600);
+}
+
+/* ---------------- Forms ---------------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink-700);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--sand-300);
+  background: var(--white);
+  color: var(--ink-900);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--ocean-400);
+  outline-offset: 2px;
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: var(--ink-500);
+}
+
+.form-success {
+  background: var(--reptile-100);
+  color: var(--reptile-600);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-weight: 600;
+}
+
+/* ---------------- Misc ---------------- */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ocean-700);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 0 0 var(--radius-sm) 0;
+  z-index: 200;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.divider {
+  height: 1px;
+  background: var(--sand-300);
+  border: none;
+  margin: 40px 0;
+}
+
+::selection {
+  background: var(--coral-400);
+  color: var(--white);
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-bottom: 74px;
+  }
 }
