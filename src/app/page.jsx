@@ -79,7 +79,7 @@ export default function Home() {
         <div className={styles.heroInner}>
           <span className={styles.heroBadge}>
             <IconLeaf size={14} />
-            Open daily · 9AM–6PM
+            Open Wed–Mon · Closed Tuesdays
           </span>
           <h1 className={`${styles.heroTitle} display`}>
             Come Experience The<br></br>

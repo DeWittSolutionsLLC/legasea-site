@@ -4,7 +4,6 @@ import styles from "./Footer.module.css";
 import NewsletterForm from "./NewsletterForm";
 import {
   IconInstagram,
-  IconTikTok,
   IconYouTube,
   IconFacebook,
 } from "./icons";
@@ -13,11 +12,6 @@ const socials = [
     label: "Instagram",
     icon: IconInstagram,
     href: "https://instagram.com/legaseaaquarium",
-  },
-  {
-    label: "TikTok",
-    icon: IconTikTok,
-    href: "https://tiktok.com",
   },
   {
     label: "YouTube",
@@ -120,6 +114,9 @@ export default function Footer() {
             <li>
               <Link href="/vip">VIP &amp; Membership</Link>
             </li>
+            <li>
+              <Link href="/careers">Careers</Link>
+            </li>
           </ul>
         </div>
 
@@ -152,8 +149,9 @@ export default function Footer() {
             © {new Date().getFullYear()} LegaSea Aquarium &amp; The Reptarium.
           </span>
           <span>
-            1 Reef Hall Way · Open daily 9AM–6PM ·{" "}
-            <a href="tel:+15555550123">(555) 555-0123</a>
+            45550 Van Dyke Ave, Utica, MI 48317 · Mon/Wed/Thu/Fri 10AM–6PM,
+            Sat–Sun 11AM–7PM, Tue closed ·{" "}
+            <a href="tel:+15868846941">(586) 884-6941</a>
           </span>
         </div>
         <div

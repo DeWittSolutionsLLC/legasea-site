@@ -1,0 +1,52 @@
+.pageContainer {
+  max-width: 800px;
+}
+
+.intro {
+  color: var(--glass-text-dim);
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+
+.sectionHeading {
+  margin-bottom: 16px;
+}
+
+.jobCard {
+  padding: 22px;
+}
+
+.jobTitle {
+  margin-bottom: 8px;
+}
+
+.jobApply {
+  margin: 0;
+  color: var(--glass-text-dim);
+}
+
+.jobLink {
+  color: var(--coral-400);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.howToApplyCard {
+  padding: 22px;
+  margin-top: 24px;
+}
+
+.howToApplyHeading {
+  margin-bottom: 8px;
+}
+
+.howToApplyText {
+  margin: 0;
+  color: var(--glass-text-dim);
+}
+
+.eeoText {
+  color: var(--glass-text-dim);
+  font-size: 0.72rem;
+  margin: 0;
+}

@@ -96,8 +96,8 @@ export default function AccessibilityPage() {
         <p className={styles.contactText}>
           Notice something that isn&apos;t accessible, or have a request for
           your visit? Contact Guest Services at{" "}
-          <a href="tel:+15555550123" className={styles.contactLink}>
-            (555) 555-0123
+          <a href="tel:+15868846941" className={styles.contactLink}>
+            (586) 884-6941
           </a>{" "}
           — we&apos;re happy to help plan ahead.
         </p>

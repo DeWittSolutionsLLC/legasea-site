@@ -13,7 +13,7 @@ function answerFor(input) {
   const lower = input.toLowerCase();
   const match = faqs.find((f) => f.keywords.some((k) => lower.includes(k)));
   if (match) return match.answer;
-  return "I don't have that answer yet — try asking about hours, tickets, membership, directions, encounters, or accessibility. For anything else, guest services can help at (555) 555-0123.";
+  return "I don't have that answer yet — try asking about hours, tickets, membership, directions, encounters, or accessibility. For anything else, guest services can help at (586) 884-6941.";
 }
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);

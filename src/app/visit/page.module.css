@@ -37,6 +37,30 @@
   color: var(--glass-text-dim);
 }
 
+.travelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 760px) {
+  .travelGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.travelCard h3 {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+.travelCardText {
+  margin: 0;
+  color: var(--glass-text-dim);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .groupCallout {
   padding: 28px;
   display: flex;

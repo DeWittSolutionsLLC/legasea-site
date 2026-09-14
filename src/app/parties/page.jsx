@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 export const metadata = {
   title: "Parties & Groups",
   description:
-    "Birthday parties, Bring-the-Zoo-to-You visits, field trips, and offsite events at LegaSea Aquarium & The Reptarium.",
+    "Birthday parties, Bring-the-Zoo-to-You visits, field trips, and private guided tours at LegaSea Aquarium & The Reptarium.",
 };
 export default function PartiesPage() {
   return (
@@ -13,7 +13,7 @@ export default function PartiesPage() {
       <PageHero
         eyebrow="Parties & Groups"
         title="Bring the group — we'll bring the animals"
-        subtitle="From a birthday room to a full offsite event, pick the package below and request your date."
+        subtitle="From a birthday room to a private guided tour, pick the package below and request your date."
         tone="reptile"
         crumbLabel="Parties & Groups"
         image="/images/BirthdayPartyHero.jpg"

@@ -23,7 +23,7 @@ export default async function PartyDetailPage(props) {
   const { slug } = await props.params;
   const party = findParty(slug);
   if (!party) notFound();
-  const groupSlugs = ["field-trips", "bring-the-zoo-to-you", "offsite-events"];
+  const groupSlugs = ["field-trips", "bring-the-zoo-to-you"];
   const variant = groupSlugs.includes(party.slug) ? "group" : undefined;
   return (
     <div className="container section">

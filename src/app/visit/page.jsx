@@ -158,6 +158,48 @@ export default function VisitPage() {
           <Testimonials />
         </div>
 
+        <div className={styles.sectionBlock}>
+          <h2 className={styles.sectionTitle}>Getting Here</h2>
+          <p className={styles.sectionSubtitle}>
+            We&apos;re at 45550 Van Dyke Ave, Utica, MI 48317 — here&apos;s
+            what to know if you&apos;re travelling from out of town.
+          </p>
+          <div className={styles.travelGrid}>
+            <div className={`card ${styles.travelCard}`}>
+              <div className="card-body">
+                <h3>Flying In</h3>
+                <p className={styles.travelCardText}>
+                  Detroit Metropolitan Wayne County Airport (DTW) is about 48
+                  minutes away (43.8 miles). Bishop International Airport
+                  (FNT) is about 46 minutes away (50.9 miles) via I-75 S.
+                </p>
+              </div>
+            </div>
+            <div className={`card ${styles.travelCard}`}>
+              <div className="card-body">
+                <h3>Nearby Hotels</h3>
+                <p className={styles.travelCardText}>
+                  Staying overnight? You&apos;ll find hotels in Utica, Shelby
+                  Township, and Sterling Heights, MI, including Comfort Inn,
+                  La Quinta Inn &amp; Suites, Holiday Inn Express &amp;
+                  Suites, Hyatt Place Detroit/Utica, and Hampton Inn.
+                </p>
+              </div>
+            </div>
+            <div className={`card ${styles.travelCard}`}>
+              <div className="card-body">
+                <h3>RV &amp; Camping</h3>
+                <p className={styles.travelCardText}>
+                  Road-tripping in an RV? Cross-n-Creek Campground
+                  (Ravenna), Algonac State Park (Marine City), and Pontiac
+                  Lake State Recreation Area (Waterford) are all within
+                  driving distance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div
           className={`card ${styles.groupCallout}`}
         >
