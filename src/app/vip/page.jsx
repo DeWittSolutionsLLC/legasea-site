@@ -27,7 +27,7 @@ const tiers = [
       "Everything in Reef Pass",
       "Fast-pass line at every encounter",
       "1 free guided tour/quarter",
-      "VIP Scan Shirt included",
+      "LegaSea logo tee included",
     ],
   },
   {
@@ -72,10 +72,10 @@ export default function VipPage() {
                 ))}
               </ul>
               <Link
-                href="/shop/vip-scan-shirt"
+                href="/shop/reptarium-logo-tee"
                 className="btn btn-outline btn-outline--glass btn-block"
               >
-                See VIP Scan Shirt
+                See LegaSea Logo Tee
               </Link>
             </div>
           ))}

@@ -29,13 +29,13 @@ export default function ShopPage() {
             href: `/shop/${p.slug}`,
             image: undefined,
             icon: p.icon,
-            tag: p.slug === "vip-scan-shirt" ? "Members" : "Merch",
+            tag: p.slug === "onemillionwrists-bracelet" ? "Tribute" : "Merch",
             title: p.name,
             price: `$${p.price}`,
             size:
               i === 0
                 ? "large"
-                : p.slug === "vip-scan-shirt"
+                : p.slug === "onemillionwrists-bracelet"
                   ? "wide"
                   : "normal",
           }))}
