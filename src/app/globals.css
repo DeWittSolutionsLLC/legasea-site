@@ -104,11 +104,14 @@ body {
   overflow-x: hidden;
 }
 
-/* Text-size accessibility toggle (see AccessibilityToolbar) */
-body[data-text-size="lg"] {
+/* Text-size accessibility toggle (see AccessibilityToolbar). This has
+   to target the root <html> element, not <body> — every font-size in
+   this codebase is in rem, which is always relative to the root, so a
+   font-size set on <body> would have no effect on rem-sized text. */
+html[data-text-size="lg"] {
   font-size: 1.125rem;
 }
-body[data-text-size="xl"] {
+html[data-text-size="xl"] {
   font-size: 1.28rem;
 }
 

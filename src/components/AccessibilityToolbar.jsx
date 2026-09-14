@@ -24,7 +24,10 @@ export default function AccessibilityToolbar() {
   }, []);
   useEffect(() => {
     if (!loaded) return;
-    document.body.setAttribute("data-text-size", textSize);
+    // rem units (used throughout this codebase) are always relative to
+    // the root <html> element, not <body> — so the text-size attribute
+    // has to live on the root for this to actually scale anything.
+    document.documentElement.setAttribute("data-text-size", textSize);
     document.body.setAttribute("data-contrast", contrast);
     try {
       localStorage.setItem(
