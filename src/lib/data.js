@@ -27,6 +27,14 @@ export const zones = [
     description:
       "Our flagship coral reef tanks — home to tangs, clownfish, and a 12-foot viewing wall.",
     highlights: ["Living Reef Tank", "Touch Tide Pool", "Seahorse Nursery"],
+    crowdWeight: 2,
+    sensory: {
+      sound: "moderate",
+      light: "moderate",
+      crowding: "moderate",
+      touch: true,
+      notes: "Splashing from the tide pool and a low ambient hum from tank filtration.",
+    },
   },
   {
     slug: "reptarium",
@@ -42,6 +50,14 @@ export const zones = [
       "Crocodile Cove",
       "Free-Roam Tortoise Yard",
     ],
+    crowdWeight: 2,
+    sensory: {
+      sound: "low",
+      light: "low",
+      crowding: "low",
+      touch: false,
+      notes: "Dim, quiet exhibit lighting to match reptile habitats — a good low-stimulation stop.",
+    },
   },
   {
     slug: "mangrove-walk",
@@ -53,6 +69,14 @@ export const zones = [
     description:
       "An open-air boardwalk through mangrove habitat with frogs, turtles, and wading birds.",
     highlights: ["Turtle Lagoon", "Frog Grotto", "Bird Blind"],
+    crowdWeight: 1,
+    sensory: {
+      sound: "low",
+      light: "bright",
+      crowding: "low",
+      touch: false,
+      notes: "Outdoor and open-air, with natural daylight and the most space to spread out.",
+    },
   },
   {
     slug: "deep-tank",
@@ -64,6 +88,14 @@ export const zones = [
     description:
       "A 300,000-gallon tank with sharks and rays, plus stadium seating for dive shows.",
     highlights: ["Shark Dive Show", "Ray Touch Pool", "Underwater Tunnel"],
+    crowdWeight: 3,
+    sensory: {
+      sound: "high",
+      light: "moderate",
+      crowding: "high",
+      touch: true,
+      notes: "Show narration is amplified over speakers and stadium seating fills up fast before showtime.",
+    },
   },
   {
     slug: "kids-cove",
@@ -75,6 +107,14 @@ export const zones = [
     description:
       "A splash pad, crawl-through tunnels, and the Zookeeper program classroom.",
     highlights: ["Splash Pad", "Crawl Tunnels", "Zookeeper Classroom"],
+    crowdWeight: 2,
+    sensory: {
+      sound: "high",
+      light: "bright",
+      crowding: "high",
+      touch: true,
+      notes: "The splash pad area is loud and busy, especially midday — a high-stimulation zone.",
+    },
   },
   {
     slug: "welcome-plaza",
@@ -86,6 +126,14 @@ export const zones = [
     description:
       "Guest services, gift shop, and the main entrance — start your visit here.",
     highlights: ["Guest Services", "Gift Shop", "Café"],
+    crowdWeight: 3,
+    sensory: {
+      sound: "moderate",
+      light: "bright",
+      crowding: "high",
+      touch: false,
+      notes: "Busiest right at opening and closing as guests arrive and check out of the gift shop.",
+    },
   },
 ];
 export const experiences = [
@@ -545,6 +593,91 @@ export const stickers = [
     hint: "Near the splash pad entrance",
   },
 ];
+export const testimonials = [
+  {
+    id: "t-marcus",
+    name: "Marcus D.",
+    context: "Visited with two kids, ages 6 and 9",
+    rating: 5,
+    quote:
+      "The Feed a Ray encounter was the highlight of our whole trip — my kids are still talking about it weeks later. Booking right from the QR code at the station made it so easy.",
+  },
+  {
+    id: "t-priya",
+    name: "Priya S.",
+    context: "Reptarium VIP member",
+    rating: 5,
+    quote:
+      "Fast-pass line access alone paid for the membership after two visits. The scan card is genuinely convenient, not just a gimmick.",
+  },
+  {
+    id: "t-janet",
+    name: "Janet & Tom R.",
+    context: "Booked a Junior Zookeeper series for their daughter",
+    rating: 5,
+    quote:
+      "Our daughter came out of every session excited to tell us something new. The keepers clearly love working with kids, not just animals.",
+  },
+  {
+    id: "t-devon",
+    name: "Devon K.",
+    context: "Field trip chaperone, 4th grade class",
+    rating: 4,
+    quote:
+      "Well organized for a group of 30 eight-year-olds, which is saying something. The classroom session tied in nicely with what they'd been learning about habitats.",
+  },
+  {
+    id: "t-alicia",
+    name: "Alicia M.",
+    context: "First-time visitor, used the sensory map",
+    rating: 5,
+    quote:
+      "I have a kid who gets overwhelmed easily, and being able to plan our route around the quieter zones ahead of time made a huge difference.",
+  },
+  {
+    id: "t-ben",
+    name: "Ben H.",
+    context: "Booked a birthday party for a 7-year-old",
+    rating: 5,
+    quote:
+      "The party host handled everything — we just showed up. The capybara encounter had every kid at the party asking their parents for one.",
+  },
+];
+const WEATHER_CONDITIONS = [
+  {
+    condition: "Sunny",
+    icon: "sun",
+    tip: "Clear skies today — Mangrove Walk's open-air boardwalk is a great place to start.",
+  },
+  {
+    condition: "Partly Cloudy",
+    icon: "cloud-sun",
+    tip: "Mild and mostly clear — a great day to do the full self-guided outdoor route.",
+  },
+  {
+    condition: "Light Rain",
+    icon: "cloud-rain",
+    tip: "Light rain expected — Reef Hall, The Reptarium, and Deep Tank Theater are all indoors.",
+  },
+];
+export function getTodayWeather(now = new Date()) {
+  const dayOfYear = Math.floor(
+    (now - new Date(now.getFullYear(), 0, 0)) / 86_400_000,
+  );
+  return WEATHER_CONDITIONS[dayOfYear % WEATHER_CONDITIONS.length];
+}
+const CROWD_LEVELS = ["Low", "Moderate", "Busy"];
+export function getCrowdLevel(zoneSlug, now = new Date()) {
+  const zone = zones.find((z) => z.slug === zoneSlug);
+  if (!zone) return CROWD_LEVELS[0];
+  const hour = now.getHours() + now.getMinutes() / 60;
+  // Crowds build from open (9AM) toward a midday peak (~1PM), then ease off.
+  const curve = Math.max(0, 1 - Math.abs(hour - 13) / 5);
+  const score = curve * zone.crowdWeight;
+  if (score > 1.6) return CROWD_LEVELS[2];
+  if (score > 0.7) return CROWD_LEVELS[1];
+  return CROWD_LEVELS[0];
+}
 export const faqs = [
   {
     keywords: ["hour", "open", "close", "time"],

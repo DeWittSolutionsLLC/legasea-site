@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import MemberCard from "@/components/MemberCard";
+import WalletPass from "@/components/WalletPass";
 import GeofenceDemo from "@/components/GeofenceDemo";
 import IconBadge from "@/components/IconBadge";
 import styles from "./page.module.css";
@@ -99,6 +100,15 @@ export default function VipPage() {
             <GeofenceDemo />
           </div>
         </div>
+
+        <h2 className={styles.sectionTitle} style={{ marginTop: 44 }}>
+          Add your pass to your phone&apos;s wallet
+        </h2>
+        <p className={`lede ${styles.sectionLede}`}>
+          Skip pulling up the app — flash your phone&apos;s lock screen at any
+          station scan point instead.
+        </p>
+        <WalletPass tiers={tiers} />
       </div>
     </>
   );

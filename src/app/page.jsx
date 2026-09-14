@@ -1,15 +1,17 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { blogPosts, experiences, zones, findBlogPost } from "@/lib/data";
-import UpcomingShowBanner from "@/components/UpcomingShowBanner";
+import TodayStrip from "@/components/TodayStrip";
 import HeroVideo from "@/components/HeroVideo";
 import HeroBackdrop from "@/components/HeroBackdrop";
 import { CausticLight, DappledLight } from "@/components/Atmosphere";
 import MediaThumb from "@/components/MediaThumb";
 import ForegroundAccents from "@/components/ForegroundAccents";
 import SocialFeed from "@/components/SocialFeed";
+import Testimonials from "@/components/Testimonials";
 import AnimalSpotlight from "@/components/AnimalSpotlight";
 import IconBadge from "@/components/IconBadge";
+import AddToVisitButton from "@/components/AddToVisitButton";
 import {
   IconClock,
   IconTicket,
@@ -17,23 +19,48 @@ import {
   IconChevronDown,
 } from "@/components/icons";
 function EncounterCard({ exp }) {
+  const href = `/experience/${exp.slug}`;
   return (
-    <Link href={`/experience/${exp.slug}`} className={styles.glassCard}>
-      <MediaThumb
-        image={exp.image ?? exp.video?.poster}
-        icon={exp.icon}
-        alt={exp.name}
-        background="rgba(255,255,255,0.05)"
-      />
+    <div className={styles.glassCard}>
+      <Link href={href} style={{ display: "contents" }} aria-label={exp.name}>
+        <MediaThumb
+          image={exp.image ?? exp.video?.poster}
+          icon={exp.icon}
+          alt={exp.name}
+          background="rgba(255,255,255,0.05)"
+        />
+      </Link>
       <div className={styles.glassCardBody}>
-        <span className={styles.glassTag}>
-          <IconClock size={12} /> {exp.duration}
-        </span>
-        <h3>{exp.name}</h3>
-        <p>{exp.summary}</p>
-        <span className={styles.glassPrice}>${exp.price}</span>
+        <Link href={href} style={{ display: "contents" }}>
+          <span className={styles.glassTag}>
+            <IconClock size={12} /> {exp.duration}
+          </span>
+          <h3>{exp.name}</h3>
+          <p>{exp.summary}</p>
+        </Link>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 10,
+            flexWrap: "wrap",
+          }}
+        >
+          <span className={styles.glassPrice}>${exp.price}</span>
+          <AddToVisitButton
+            item={{
+              id: exp.slug,
+              name: exp.name,
+              price: exp.price,
+              duration: exp.duration,
+              image: exp.image ?? exp.video?.poster ?? exp.icon,
+              href,
+            }}
+          />
+        </div>
       </div>
-    </Link>
+    </div>
   );
 }
 export default function Home() {
@@ -102,7 +129,7 @@ export default function Home() {
               <div className={styles.statLabel}>Hidden stickers to find</div>
             </div>
           </div>
-          <UpcomingShowBanner />
+          <TodayStrip />
         </div>
       </div>
 
@@ -353,6 +380,18 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ---------------- Testimonials ---------------- */}
+      <section className={styles.testimonialSection}>
+        <div className="container">
+          <div className={styles.zoneBandHead}>
+            <span className="eyebrow">What Guests Say</span>
+            <h2 className="display">Loved by families like yours</h2>
+            <p>Real reviews from recent visitors — every quote is unedited.</p>
+          </div>
+          <Testimonials />
         </div>
       </section>
 

@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./ZoneMap.module.css";
 import IconBadge from "@/components/IconBadge";
-import { experiences, zones } from "@/lib/data";
+import { IconUsers } from "@/components/icons";
+import { experiences, getCrowdLevel, zones } from "@/lib/data";
+const CROWD_TAG_CLASS = {
+  Low: "tag--reptile",
+  Moderate: "",
+  Busy: "tag--coral",
+};
 const TOUR_ORDER = [
   "welcome-plaza",
   "reef-hall",
@@ -17,6 +23,7 @@ export default function ZoneMap() {
   const [selected, setSelected] = useState(zones[0].slug);
   const [tourActive, setTourActive] = useState(false);
   const [tourStep, setTourStep] = useState(0);
+  const [now, setNow] = useState(null);
   useEffect(() => {
     // Reads the URL hash (unavailable during SSR) once on mount.
     const hash = window.location.hash.replace("#", "");
@@ -24,6 +31,13 @@ export default function ZoneMap() {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelected(hash);
     }
+  }, []);
+  useEffect(() => {
+    // The current time can't be known during SSR, so it's set after mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setNow(new Date());
+    const id = setInterval(() => setNow(new Date()), 60_000);
+    return () => clearInterval(id);
   }, []);
   const zone = zones.find((z) => z.slug === selected) ?? zones[0];
   const zoneExperiences = experiences.filter((e) => e.zone === zone.slug);
@@ -154,13 +168,32 @@ export default function ZoneMap() {
       </div>
 
       <div className={styles.detailCard} id={zone.slug}>
-        <span
-          className="eyebrow eyebrow--ocean"
-          style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: 10,
+          }}
         >
-          <IconBadge src={zone.icon} size={30} />
-          {zone.name}
-        </span>
+          <span
+            className="eyebrow eyebrow--ocean"
+            style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
+          >
+            <IconBadge src={zone.icon} size={30} />
+            {zone.name}
+          </span>
+          {now && (
+            <span
+              className={`tag ${CROWD_TAG_CLASS[getCrowdLevel(zone.slug, now)]}`}
+              style={{ display: "inline-flex", alignItems: "center", gap: 5 }}
+            >
+              <IconUsers size={13} />
+              {getCrowdLevel(zone.slug, now)} right now
+            </span>
+          )}
+        </div>
         <p
           style={{
             margin: "10px 0 14px",
@@ -232,6 +265,23 @@ export default function ZoneMap() {
             >
               {z.name}
             </strong>
+            {now && (
+              <span
+                aria-hidden="true"
+                title={`${getCrowdLevel(z.slug, now)} crowds`}
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: "50%",
+                  display: "inline-block",
+                  background: {
+                    Low: "var(--reptile-500)",
+                    Moderate: "var(--canopy-glow, #e2c073)",
+                    Busy: "var(--coral-500)",
+                  }[getCrowdLevel(z.slug, now)],
+                }}
+              />
+            )}
           </button>
         ))}
       </div>

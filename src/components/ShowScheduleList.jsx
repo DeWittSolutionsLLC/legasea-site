@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import styles from "./ShowScheduleList.module.css";
 import IconBadge from "@/components/IconBadge";
+import AddToVisitButton from "@/components/AddToVisitButton";
 import { formatShowTime, getUpcomingShow, isShowLive, shows } from "@/lib/data";
 export default function ShowScheduleList() {
   const [now, setNow] = useState(null);
@@ -49,6 +50,13 @@ export default function ShowScheduleList() {
                 Up next
               </span>
             )}
+            <AddToVisitButton
+              item={{
+                id: `show-${show.id}`,
+                name: show.name,
+                duration: `${show.durationMinutes} min`,
+              }}
+            />
           </div>
         );
       })}

@@ -22,6 +22,11 @@ export const navGroups = [
         label: "Stamp Hunt",
         blurb: "Find stickers, earn a prize",
       },
+      {
+        href: "/my-visit",
+        label: "My Visit",
+        blurb: "Everything you've added, in one place",
+      },
     ],
   },
   {

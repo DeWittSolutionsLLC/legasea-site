@@ -434,6 +434,12 @@
   color: var(--white);
 }
 
+.testimonialSection {
+  padding: 90px 0;
+  background: var(--abyss-950);
+  color: var(--glass-text);
+}
+
 /* ---------------- Final CTA ---------------- */
 
 .ctaBand {

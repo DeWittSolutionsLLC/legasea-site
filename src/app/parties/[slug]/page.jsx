@@ -23,6 +23,8 @@ export default async function PartyDetailPage(props) {
   const { slug } = await props.params;
   const party = findParty(slug);
   if (!party) notFound();
+  const groupSlugs = ["field-trips", "bring-the-zoo-to-you", "offsite-events"];
+  const variant = groupSlugs.includes(party.slug) ? "group" : undefined;
   return (
     <div className="container section">
       <AmbientBackdrop tone="reptile" />
@@ -54,7 +56,7 @@ export default async function PartyDetailPage(props) {
         </div>
 
         <div className={styles.sticky}>
-          <InquiryForm itemName={party.name} />
+          <InquiryForm itemName={party.name} variant={variant} />
         </div>
       </div>
     </div>

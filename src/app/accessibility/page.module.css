@@ -23,6 +23,19 @@
   color: var(--glass-text-dim);
 }
 
+.sensorySection {
+  margin-bottom: 48px;
+}
+
+.sensoryHeading {
+  margin-bottom: 8px;
+}
+
+.sensoryIntro {
+  color: var(--glass-text-dim);
+  margin-bottom: 24px;
+}
+
 .toolbarCard {
   padding: 26px;
 }

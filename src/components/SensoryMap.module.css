@@ -1,0 +1,80 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.zoneCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zoneHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.zoneName {
+  margin: 0;
+}
+
+.meters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meterRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.meterLabel {
+  flex: 0 0 64px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--glass-text-dim);
+}
+
+.meterDots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.meterDots[data-rank="1"] .dot[data-filled="true"] {
+  background: var(--reptile-500);
+}
+
+.meterDots[data-rank="2"] .dot[data-filled="true"] {
+  background: var(--canopy-glow, #e2c073);
+}
+
+.meterDots[data-rank="3"] .dot[data-filled="true"] {
+  background: var(--coral-500);
+}
+
+.meterRow .tag {
+  margin-left: auto;
+}
+
+.touchTag {
+  width: fit-content;
+}
+
+.notes {
+  margin: 0;
+  color: var(--glass-text-dim);
+  font-size: 0.92rem;
+}

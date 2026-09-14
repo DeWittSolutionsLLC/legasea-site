@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import IconBadge from "@/components/IconBadge";
+import SensoryMap from "@/components/SensoryMap";
 import styles from "./page.module.css";
 export const metadata = {
   title: "Accessibility",
@@ -15,7 +16,12 @@ const items = [
   {
     icon: "/images/icons/icon-meditation.jpg",
     title: "Sensory-friendly hours",
-    text: "The first hour after opening (9:00–10:00 AM) on the first Tuesday of every month runs with lowered lighting and sound in Deep Tank Theater and no scheduled announcements.",
+    text: "The first hour after opening (9:00–10:00 AM) on the first Tuesday of every month runs with lowered lighting and sound in Deep Tank Theater and no scheduled announcements. Noise-reducing headphones and a visual schedule of the day are available to borrow at Guest Services any time, not just during sensory-friendly hours.",
+  },
+  {
+    icon: "/images/icons/icon-chat.jpg",
+    title: "ASL interpretation requests",
+    text: "Request an ASL interpreter for your visit — available with at least 2 weeks' notice. Contact Guest Services to arrange interpretation for shows, keeper talks, or a guided tour.",
   },
   {
     icon: "/images/icons/icon-servicedog.jpg",
@@ -58,6 +64,16 @@ export default function AccessibilityPage() {
               <p className={styles.itemText}>{item.text}</p>
             </div>
           ))}
+        </div>
+
+        <div className={styles.sensorySection}>
+          <h2 className={styles.sensoryHeading}>Sensory map</h2>
+          <p className={styles.sensoryIntro}>
+            Every zone below is rated for sound, light, and crowding, plus
+            whether it has a hands-on touch element — use it to plan a route
+            around your comfort level before you arrive.
+          </p>
+          <SensoryMap />
         </div>
 
         <div className={`card ${styles.toolbarCard}`}>

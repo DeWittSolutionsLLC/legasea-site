@@ -1,0 +1,145 @@
+.wrap {
+  max-width: 380px;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.16));
+  background: transparent;
+  color: var(--ink-500);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tab[data-active="true"] {
+  background: var(--ocean-700);
+  color: white;
+  border-color: var(--ocean-700);
+}
+
+.pass {
+  position: relative;
+  border-radius: 20px;
+  padding: 22px 24px 20px;
+  color: white;
+  background: linear-gradient(160deg, var(--ink-900), var(--ocean-700) 70%);
+  box-shadow: var(--shadow-lg, 0 16px 40px rgba(0, 0, 0, 0.35));
+  overflow: hidden;
+}
+
+.pass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 100% 0%,
+    rgba(255, 255, 255, 0.14),
+    transparent 55%
+  );
+}
+
+.passHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.brand {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.tierName {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-top: 2px;
+}
+
+.passRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+  position: relative;
+}
+
+.passField {
+  display: block;
+}
+
+.passFieldLabel {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.7;
+}
+
+.passFieldValue {
+  display: block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.barcode {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 42px;
+  margin-top: 20px;
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.barcode span {
+  display: block;
+  width: 3px;
+  background: var(--ink-900);
+}
+
+.walletButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.walletBtn {
+  flex: 1 1 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--ink-900);
+  background: var(--ink-900);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.walletBtn[data-variant="google"] {
+  background: white;
+  color: var(--ink-900);
+}
+
+.note {
+  font-size: 0.78rem;
+  color: var(--ink-500);
+  margin-top: 10px;
+}

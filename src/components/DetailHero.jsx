@@ -22,9 +22,7 @@ export default function DetailHero({ icon, image, video, alt }) {
           src={image}
           alt={alt}
           fill
-          style={{
-            objectFit: "cover",
-          }}
+          className={styles.media}
           sizes="(max-width: 760px) 100vw, 560px"
         />
       </div>
@@ -36,9 +34,7 @@ export default function DetailHero({ icon, image, video, alt }) {
         src={icon}
         alt={alt}
         fill
-        style={{
-          objectFit: "cover",
-        }}
+        className={styles.media}
         sizes="(max-width: 760px) 100vw, 560px"
       />
     </div>

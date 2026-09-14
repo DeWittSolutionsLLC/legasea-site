@@ -21,6 +21,7 @@ export default function StampHunt() {
   const [staffResult, setStaffResult] = useState("idle");
   const [redemptionCode, setRedemptionCode] = useState("");
   const [loaded, setLoaded] = useState(false);
+  const [newlyFoundId, setNewlyFoundId] = useState(null);
   useEffect(() => {
     // Reads localStorage (unavailable during SSR) once on mount, and
     // generates the redemption code client-side to match.
@@ -45,10 +46,15 @@ export default function StampHunt() {
         scannedAt: new Date().toISOString(),
       },
     ]);
+    // Flags this badge as the one to play the "just scanned" pop-in
+    // animation for; stickers restored from localStorage on load never
+    // pass through here, so they render as found without replaying it.
+    setNewlyFoundId(id);
   }
   function resetDemo() {
     setScans([]);
     setClaimed(false);
+    setNewlyFoundId(null);
     localStorage.removeItem(STORAGE_KEY);
     localStorage.removeItem(`${STORAGE_KEY}-claimed`);
   }
@@ -92,15 +98,20 @@ export default function StampHunt() {
         {stickers.map((sticker) => {
           const isFound = scans.some((s) => s.id === sticker.id);
           const zone = zones.find((z) => z.slug === sticker.zoneSlug);
+          const justFound = newlyFoundId === sticker.id;
           return (
             <div
               key={sticker.id}
-              className={styles.stickerCard}
+              className={`${styles.stickerCard} ${
+                justFound ? styles.justFound : ""
+              }`}
               data-found={isFound}
             >
               <div className={styles.stickerIcon} aria-hidden="true">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={sticker.icon} alt="" />
+                <div className={styles.stickerIconRing}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={sticker.icon} alt="" />
+                </div>
               </div>
               <strong
                 style={{
@@ -115,7 +126,9 @@ export default function StampHunt() {
                 {sticker.hint}
               </p>
               {isFound ? (
-                <span className="tag tag--reptile">Found ✓</span>
+                <span className={`tag tag--reptile ${styles.foundTag}`}>
+                  Found ✓
+                </span>
               ) : (
                 <button
                   type="button"

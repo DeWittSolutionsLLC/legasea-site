@@ -10,17 +10,19 @@ export default function FeaturedPanel({
   footer,
 }) {
   return (
-    <Link href={href} className={styles.panel}>
-      <div className={styles.media}>
+    <div className={styles.panel}>
+      <Link href={href} className={styles.media} aria-label={title}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={image ?? icon} alt={title} loading="lazy" />
-      </div>
+      </Link>
       <div className={styles.body}>
-        {tag}
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
+        <Link href={href} style={{ display: "contents" }}>
+          {tag}
+          <h3 className={styles.title}>{title}</h3>
+          <p className={styles.description}>{description}</p>
+        </Link>
         <div className={styles.footer}>{footer}</div>
       </div>
-    </Link>
+    </div>
   );
 }

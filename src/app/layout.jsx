@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import StickyBookCta from "@/components/StickyBookCta";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import ChatWidget from "@/components/ChatWidget";
+import MyVisitDrawer from "@/components/MyVisitDrawer";
+import { VisitPlanProvider } from "@/context/VisitPlanContext";
 import { SITE_URL } from "@/lib/site";
 const bebasNeue = Bebas_Neue({
   variable: "--font-bebas",
@@ -120,15 +122,18 @@ export default function RootLayout({ children }) {
       className={`${bebasNeue.variable} ${walterTurncoat.variable} ${futura.variable} ${ahkio.variable}`}
     >
       <body>
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <StickyBookCta />
-        <AccessibilityToolbar />
-        <ChatWidget />
+        <VisitPlanProvider>
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+          <StickyBookCta />
+          <AccessibilityToolbar />
+          <ChatWidget />
+          <MyVisitDrawer />
+        </VisitPlanProvider>
       </body>
     </html>
   );

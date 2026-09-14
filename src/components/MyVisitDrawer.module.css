@@ -1,0 +1,147 @@
+.trigger {
+  position: fixed;
+  right: 16px;
+  bottom: 88px;
+  z-index: 95;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--ocean-700);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+.trigger:hover {
+  background: var(--ocean-600, var(--ocean-700));
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--coral-500);
+  color: white;
+  font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .trigger {
+    bottom: 162px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 20, 28, 0.55);
+  z-index: 120;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(400px, 100vw);
+  background: var(--sand-100);
+  z-index: 121;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg, -8px 0 30px rgba(0, 0, 0, 0.25));
+}
+
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--sand-300);
+}
+
+.panelTitle {
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.closeBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--ink-700);
+  padding: 6px;
+}
+
+.panelBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+.empty {
+  color: var(--ink-500);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--sand-200);
+}
+
+.rowInfo {
+  min-width: 0;
+}
+
+.rowName {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin: 0 0 2px;
+}
+
+.rowMeta {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-500);
+}
+
+.removeBtn {
+  border: none;
+  background: transparent;
+  color: var(--coral-600, var(--coral-500));
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 4px 6px;
+}
+
+.panelFoot {
+  padding: 18px 20px;
+  border-top: 1px solid var(--sand-300);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--ink-700);
+}

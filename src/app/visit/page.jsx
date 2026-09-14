@@ -3,7 +3,9 @@ import PageHero from "@/components/PageHero";
 import FeaturedPanel from "@/components/FeaturedPanel";
 import EditorialList from "@/components/EditorialList";
 import CompactList from "@/components/CompactList";
+import Testimonials from "@/components/Testimonials";
 import { IconClock } from "@/components/icons";
+import AddToVisitButton from "@/components/AddToVisitButton";
 import { experiences } from "@/lib/data";
 import styles from "./page.module.css";
 export const metadata = {
@@ -44,11 +46,23 @@ export default function VisitPage() {
                 title={exp.name}
                 description={exp.description}
                 footer={
-                  <span
-                    className={`card-price ${styles.priceLarge}`}
-                  >
-                    ${exp.price}
-                  </span>
+                  <>
+                    <span
+                      className={`card-price ${styles.priceLarge}`}
+                    >
+                      ${exp.price}
+                    </span>
+                    <AddToVisitButton
+                      item={{
+                        id: exp.slug,
+                        name: exp.name,
+                        price: exp.price,
+                        duration: exp.duration,
+                        image: exp.image ?? exp.video?.poster ?? exp.icon,
+                        href: `/experience/${exp.slug}`,
+                      }}
+                    />
+                  </>
                 }
               />
             ))}
@@ -79,6 +93,16 @@ export default function VisitPage() {
                       ${exp.price}
                     </span>
                     {exp.ageNote && <span className="tag">{exp.ageNote}</span>}
+                    <AddToVisitButton
+                      item={{
+                        id: exp.slug,
+                        name: exp.name,
+                        price: exp.price,
+                        duration: exp.duration,
+                        image: exp.image ?? exp.video?.poster ?? exp.icon,
+                        href: `/experience/${exp.slug}`,
+                      }}
+                    />
                   </>
                 ),
               }))}
@@ -108,12 +132,31 @@ export default function VisitPage() {
                       <IconClock size={12} /> {exp.duration}
                     </span>
                     <span className="card-price">${exp.price}</span>
+                    <AddToVisitButton
+                      item={{
+                        id: exp.slug,
+                        name: exp.name,
+                        price: exp.price,
+                        duration: exp.duration,
+                        image: exp.image ?? exp.video?.poster ?? exp.icon,
+                        href: `/experience/${exp.slug}`,
+                      }}
+                    />
                   </>
                 ),
               }))}
             />
           </div>
         )}
+
+        <div className={styles.sectionBlock}>
+          <h2 className={styles.sectionTitle}>What Visitors Are Saying</h2>
+          <p className={styles.sectionSubtitle}>
+            Real feedback from families, members, and school groups who&apos;ve
+            already visited.
+          </p>
+          <Testimonials />
+        </div>
 
         <div
           className={`card ${styles.groupCallout}`}
