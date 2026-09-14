@@ -52,7 +52,6 @@ export default function ConnectPage() {
         subtitle="Stay wild. Stay connected."
         crumbLabel="Connect"
         image="/images/ConnectHero.png"
-        backgroundImage="/images/foliage/aquaticbackground.webp"
       >
         <p
           style={{

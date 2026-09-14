@@ -343,6 +343,7 @@ export default function Home() {
                   <img
                     src={post.icon}
                     alt=""
+                    loading="lazy"
                     style={{
                       width: "100%",
                       height: "100%",
@@ -390,6 +391,7 @@ export default function Home() {
           <img
             src="/images/foliage/aquaticbackground.webp"
             alt=""
+            loading="lazy"
             className={styles.ctaBandImg}
           />
           <div className={styles.ctaBandOverlay} />
