@@ -105,7 +105,16 @@ export default function ChatWidget() {
         aria-expanded={open}
         aria-label={open ? "Close chat" : "Open chat"}
       >
-        <span aria-hidden="true">{open ? "✕" : "💬"}</span>
+        {open ? (
+          <span aria-hidden="true">✕</span>
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src="/images/icons/icon-chat.jpg"
+            alt=""
+            className={styles.toggleIcon}
+          />
+        )}
       </button>
     </div>
   );

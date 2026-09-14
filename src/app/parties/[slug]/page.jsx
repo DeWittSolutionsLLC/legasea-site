@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import InquiryForm from "@/components/InquiryForm";
 import DetailHero from "@/components/DetailHero";
+import AmbientBackdrop from "@/components/AmbientBackdrop";
 import { findParty, parties } from "@/lib/data";
 import styles from "@/app/experience/[slug]/page.module.css";
 export function generateStaticParams() {
@@ -23,13 +24,16 @@ export default async function PartyDetailPage(props) {
   if (!party) notFound();
   return (
     <div className="container section">
+      <AmbientBackdrop tone="reptile" />
       <div className={styles.grid}>
         <div>
           <DetailHero icon={party.icon} image={party.image} alt={party.name} />
-          <h1>{party.name}</h1>
-          <p className="lede">{party.description}</p>
+          <h1 style={{ color: "var(--glass-text)" }}>{party.name}</h1>
+          <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+            {party.description}
+          </p>
 
-          <h3>What&apos;s included</h3>
+          <h3 style={{ color: "var(--glass-text)" }}>What&apos;s included</h3>
           <ul
             style={{
               display: "grid",
@@ -43,6 +47,7 @@ export default async function PartyDetailPage(props) {
                   display: "flex",
                   gap: 10,
                   alignItems: "flex-start",
+                  color: "var(--glass-text-dim)",
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -67,7 +72,7 @@ export default async function PartyDetailPage(props) {
             style={{
               fontSize: "1.4rem",
               marginTop: 20,
-              color: "var(--coral-600)",
+              color: "var(--coral-400)",
             }}
           >
             Starting at ${party.startingPrice}

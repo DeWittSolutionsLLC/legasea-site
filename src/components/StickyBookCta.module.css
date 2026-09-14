@@ -10,8 +10,10 @@
     right: 0;
     bottom: 0;
     z-index: 90;
-    background: var(--white);
-    border-top: 1px solid var(--sand-300);
+    background: rgba(4, 32, 44, 0.58);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
     padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
     align-items: center;
     justify-content: space-between;
@@ -21,13 +23,13 @@
 
   .text {
     font-size: 0.82rem;
-    color: var(--ink-500);
+    color: var(--glass-text-dim);
     line-height: 1.2;
   }
 
   .text strong {
     display: block;
-    color: var(--ocean-800);
+    color: var(--glass-text);
     font-family: var(--font-display);
     font-size: 0.95rem;
   }

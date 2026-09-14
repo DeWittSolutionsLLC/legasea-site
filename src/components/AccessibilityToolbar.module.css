@@ -35,17 +35,19 @@
   bottom: 62px;
   left: 0;
   width: 250px;
-  background: var(--white);
+  background: rgba(4, 32, 44, 0.58);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   padding: 16px;
-  border: 1px solid var(--sand-300);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .panelTitle {
   font-family: var(--font-display);
   font-size: 0.95rem;
-  color: var(--ocean-800);
+  color: var(--glass-text);
   margin-bottom: 10px;
 }
 
@@ -56,7 +58,7 @@
 .rowLabel {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--ink-700);
+  color: var(--glass-text-dim);
   margin-bottom: 6px;
   display: block;
 }
@@ -71,8 +73,9 @@
   padding: 8px 6px;
   font-size: 0.82rem;
   border-radius: var(--radius-sm);
-  border: 1.5px solid var(--sand-300);
-  background: var(--sand-100);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--glass-text);
   cursor: pointer;
 }
 
@@ -85,7 +88,7 @@
 .link {
   display: block;
   font-size: 0.82rem;
-  color: var(--ocean-700);
+  color: var(--glass-text);
   margin-top: 10px;
   text-decoration: underline;
 }

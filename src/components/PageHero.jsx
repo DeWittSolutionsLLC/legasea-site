@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./PageHero.module.css";
 import { CausticLight, DappledLight } from "./Atmosphere";
+import AmbientBackdrop from "./AmbientBackdrop";
 export default function PageHero({
   eyebrow,
   title,
@@ -16,28 +18,42 @@ export default function PageHero({
     tone === "reptile"
       ? "/images/foliage/background-rainforest.webp"
       : "/images/foliage/aquaticbackground.webp";
+  const heroObjectPosition =
+    imagePosition || (tone === "reptile" ? "50% 25%" : "50% 50%");
   return (
     <>
-      <div className={styles.ambient} data-tone={tone} aria-hidden="true">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={defaultImage} alt="" className={styles.ambientImg} />
-        {tone === "reptile" ? <DappledLight /> : <CausticLight />}
-      </div>
+      <AmbientBackdrop tone={tone} />
 
       <section className={styles.hero} data-tone={tone}>
         <div className={styles.bgLayer}>
           {backgroundImage && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={backgroundImage} alt="" className={styles.bgImgBehind} />
+            <Image
+              src={backgroundImage}
+              alt=""
+              fill
+              sizes="100vw"
+              className={styles.bgImgBehind}
+              style={{
+                objectFit: "cover",
+                objectPosition: "50% 50%",
+                filter: "brightness(0.6) saturate(0.95)",
+              }}
+            />
           )}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          {/* Main hero photo: this is the LCP element on most pages, so it
+              loads eagerly (priority) via next/image instead of a plain img. */}
+          <Image
             src={image ?? defaultImage}
             alt=""
+            fill
+            priority
+            sizes="100vw"
             className={styles.bgImg}
-            style={
-              imagePosition ? { objectPosition: imagePosition } : undefined
-            }
+            style={{
+              objectFit: "cover",
+              objectPosition: heroObjectPosition,
+              transform: "scale(1.03)",
+            }}
           />
           <div className={styles.overlay} />
           {tone === "reptile" ? <DappledLight /> : <CausticLight />}

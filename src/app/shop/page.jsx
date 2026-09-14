@@ -25,6 +25,7 @@ export default function ShopPage() {
         <h2
           style={{
             marginBottom: 20,
+            color: "var(--glass-text)",
           }}
         >
           Merch
@@ -54,6 +55,7 @@ export default function ShopPage() {
           <h2
             style={{
               marginBottom: 20,
+              color: "var(--glass-text)",
             }}
           >
             Gift Cards

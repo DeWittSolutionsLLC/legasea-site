@@ -217,8 +217,8 @@ ul {
 }
 
 .eyebrow--ocean {
-  color: var(--ocean-600);
-  background: var(--ocean-100);
+  color: var(--reef-glow);
+  background: rgba(95, 227, 255, 0.15);
 }
 
 .eyebrow--reptile {
@@ -424,19 +424,19 @@ h2.display {
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: var(--radius-pill);
-  background: var(--ocean-100);
-  color: var(--ocean-700);
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--glass-text);
   width: fit-content;
 }
 
 .tag--coral {
-  background: var(--coral-100);
-  color: var(--coral-600);
+  background: rgba(217, 79, 43, 0.28);
+  color: var(--coral-100);
 }
 
 .tag--reptile {
-  background: var(--reptile-100);
-  color: var(--reptile-600);
+  background: rgba(47, 122, 79, 0.28);
+  color: var(--reptile-100);
 }
 
 /* ---------------- Forms ---------------- */

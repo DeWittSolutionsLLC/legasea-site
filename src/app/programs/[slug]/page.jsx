@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import ProgramRegister from "@/components/ProgramRegister";
 import DetailHero from "@/components/DetailHero";
+import AmbientBackdrop from "@/components/AmbientBackdrop";
 import { findProgram, programs } from "@/lib/data";
 import styles from "@/app/experience/[slug]/page.module.css";
 export function generateStaticParams() {
@@ -23,6 +24,7 @@ export default async function ProgramDetailPage(props) {
   if (!program) notFound();
   return (
     <div className="container section">
+      <AmbientBackdrop tone="reptile" />
       <div className={styles.grid}>
         <div>
           <DetailHero
@@ -34,11 +36,14 @@ export default async function ProgramDetailPage(props) {
           <h1
             style={{
               marginTop: 10,
+              color: "var(--glass-text)",
             }}
           >
             {program.name}
           </h1>
-          <p className="lede">{program.description}</p>
+          <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+            {program.description}
+          </p>
         </div>
 
         <div className={styles.sticky}>

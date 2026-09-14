@@ -110,8 +110,8 @@ export default function ZoneMap() {
             src="/images/icons/icon-pin.jpg"
             alt=""
             style={{
-              width: 14,
-              height: 14,
+              width: 18,
+              height: 18,
               borderRadius: "50%",
               objectFit: "cover",
             }}
@@ -172,8 +172,8 @@ export default function ZoneMap() {
             src={zone.icon}
             alt=""
             style={{
-              width: 16,
-              height: 16,
+              width: 30,
+              height: 30,
               borderRadius: "50%",
               objectFit: "cover",
             }}
@@ -229,8 +229,8 @@ export default function ZoneMap() {
                     src={e.icon}
                     alt=""
                     style={{
-                      width: 18,
-                      height: 18,
+                      width: 30,
+                      height: 30,
                       borderRadius: "50%",
                       objectFit: "cover",
                     }}
@@ -254,8 +254,8 @@ export default function ZoneMap() {
           >
             <div
               style={{
-                width: 28,
-                height: 28,
+                width: 32,
+                height: 32,
                 borderRadius: "50%",
                 overflow: "hidden",
               }}

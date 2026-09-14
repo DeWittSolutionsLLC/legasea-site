@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AmbientBackdrop from "@/components/AmbientBackdrop";
 import { blogPosts, findBlogPost } from "@/lib/data";
 export function generateStaticParams() {
   return blogPosts.map((p) => ({
@@ -26,10 +27,11 @@ export default async function BlogPostPage(props) {
         maxWidth: 760,
       }}
     >
+      <AmbientBackdrop tone="ocean" />
       <Link
         href="/blog"
         style={{
-          color: "var(--ocean-600)",
+          color: "var(--glass-text)",
           fontSize: "0.9rem",
         }}
       >
@@ -56,13 +58,14 @@ export default async function BlogPostPage(props) {
       <h1
         style={{
           marginTop: 10,
+          color: "var(--glass-text)",
         }}
       >
         {post.title}
       </h1>
       <p
         style={{
-          color: "var(--ink-500)",
+          color: "var(--glass-text-dim)",
           marginBottom: 30,
         }}
       >
@@ -80,7 +83,7 @@ export default async function BlogPostPage(props) {
           key={i}
           className="lede"
           style={{
-            color: "var(--ink-700)",
+            color: "var(--glass-text-dim)",
           }}
         >
           {para}

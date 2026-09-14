@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import ShopProductActions from "@/components/ShopProductActions";
+import AmbientBackdrop from "@/components/AmbientBackdrop";
 import { findProduct, shopProducts } from "@/lib/data";
 import styles from "@/app/experience/[slug]/page.module.css";
 export function generateStaticParams() {
@@ -22,6 +23,7 @@ export default async function ShopProductPage(props) {
   if (!product) notFound();
   return (
     <div className="container section">
+      <AmbientBackdrop tone="coral" />
       <div className={styles.grid}>
         <div>
           <div
@@ -48,11 +50,14 @@ export default async function ShopProductPage(props) {
           <h1
             style={{
               marginTop: 10,
+              color: "var(--glass-text)",
             }}
           >
             {product.name}
           </h1>
-          <p className="lede">{product.description}</p>
+          <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+            {product.description}
+          </p>
         </div>
         <div className={styles.sticky}>
           <ShopProductActions product={product} />

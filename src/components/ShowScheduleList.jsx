@@ -35,8 +35,8 @@ export default function ShowScheduleList() {
                   src="/images/icons/icon-pin.jpg"
                   alt=""
                   style={{
-                    width: 13,
-                    height: 13,
+                    width: 18,
+                    height: 18,
                     borderRadius: "50%",
                     objectFit: "cover",
                     display: "inline-block",

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import BookingWidget from "@/components/BookingWidget";
 import DetailHero from "@/components/DetailHero";
+import AmbientBackdrop from "@/components/AmbientBackdrop";
 import { experiences, findExperience, findZone } from "@/lib/data";
 import styles from "./page.module.css";
 export function generateStaticParams() {
@@ -24,6 +25,7 @@ export default async function ExperiencePage(props) {
   const zone = findZone(experience.zone);
   return (
     <div className="container section">
+      <AmbientBackdrop tone="ocean" />
       <div className={styles.grid}>
         <div>
           <DetailHero
@@ -59,11 +61,14 @@ export default async function ExperiencePage(props) {
           <h1
             style={{
               marginTop: 10,
+              color: "var(--glass-text)",
             }}
           >
             {experience.name}
           </h1>
-          <p className="lede">{experience.description}</p>
+          <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+            {experience.description}
+          </p>
 
           <div
             style={{
