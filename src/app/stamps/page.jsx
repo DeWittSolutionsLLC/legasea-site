@@ -14,7 +14,7 @@ export default function StampsPage() {
         subtitle="Five animal-shaped stickers are hidden around the facility. Scan each with your phone as you find it — collect all five to unlock a reward at guest services."
         tone="reptile"
         crumbLabel="Stamp Hunt"
-        image="/images/StampCollectionHero.png"
+        image="/images/StampCollectionHero.jpg"
       />
 
       <div className="container section">

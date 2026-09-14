@@ -15,7 +15,7 @@ export default function PartiesPage() {
         subtitle="From a birthday room to a full offsite event, pick the package below and request your date."
         tone="reptile"
         crumbLabel="Parties & Groups"
-        image="/images/BirthdayPartyHero.png"
+        image="/images/BirthdayPartyHero.jpg"
       />
 
       <div className="container section">

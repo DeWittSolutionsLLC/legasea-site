@@ -40,7 +40,7 @@ export default function AccessibilityPage() {
         title="Visit planning &amp; site accessibility"
         subtitle="Information for planning an accessible visit, plus the on-site tools available on this website."
         crumbLabel="Accessibility"
-        image="/images/AccessibilityHero.png"
+        image="/images/AccessibilityHero.jpg"
       />
 
       <div

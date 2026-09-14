@@ -18,7 +18,7 @@ export default function ShopPage() {
         subtitle="Everything here ships from the same cart as your tickets — merch and gift cards live together in one Shopify-powered shop."
         tone="coral"
         crumbLabel="Shop"
-        image="/images/ShopHero.png"
+        image="/images/ShopHero.jpg"
       />
 
       <div className="container section">

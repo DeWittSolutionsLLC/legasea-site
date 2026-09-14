@@ -13,7 +13,7 @@ export default function ShowsPage() {
         title="Shows &amp; keeper talks"
         subtitle="Every show is included with general admission. Times update live — the current or next show is always highlighted."
         crumbLabel="Show Schedule"
-        image="/images/ShowScheduleHero.png"
+        image="/images/ShowScheduleHero.jpg"
       />
 
       <div className="container section">

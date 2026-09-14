@@ -49,7 +49,7 @@ export default function VipPage() {
         subtitle="Every membership tier includes a scannable member card — flash it at any station for fast-pass access and tracked perks."
         tone="coral"
         crumbLabel="VIP & Membership"
-        image="/images/VipHero.png"
+        image="/images/VipHero.jpg"
       />
 
       <div className="container section">

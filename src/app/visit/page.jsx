@@ -21,7 +21,7 @@ export default function VisitPage() {
         title="One ticket. Every zone, show, and encounter."
         subtitle="Browse general admission, guided tours, and bookable animal encounters below — every price shown is live and bookable right now."
         crumbLabel="Visit"
-        image="/images/PlanYourVisitHero.png"
+        image="/images/PlanYourVisitHero.jpg"
       />
 
       <div className="container section">
