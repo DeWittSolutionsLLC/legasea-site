@@ -1,6 +1,7 @@
 import PageHero from "@/components/PageHero";
 import EditorialList from "@/components/EditorialList";
 import { parties } from "@/lib/data";
+import styles from "./page.module.css";
 export const metadata = {
   title: "Parties & Groups",
   description:
@@ -28,22 +29,10 @@ export default function PartiesPage() {
             description: p.description,
             footer: (
               <>
-                <span
-                  className="card-price"
-                  style={{
-                    fontSize: "1.15rem",
-                  }}
-                >
+                <span className={`card-price ${styles.startingPrice}`}>
                   From ${p.startingPrice}
                 </span>
-                <span
-                  style={{
-                    color: "var(--glass-text-dim)",
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  {p.summary}
-                </span>
+                <span className={styles.summaryText}>{p.summary}</span>
               </>
             ),
             linkLabel: "See what's included",

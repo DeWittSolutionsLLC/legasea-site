@@ -1,0 +1,48 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tiersGrid {
+  margin-bottom: 48px;
+}
+
+.tierCard {
+  padding: 24px;
+}
+
+.tierName {
+  margin: 10px 0 14px;
+}
+
+.perkList {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.perkItem {
+  display: flex;
+  gap: 8px;
+  font-size: 0.92rem;
+}
+
+.perkIcon {
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  color: var(--glass-text);
+}
+
+.sectionLede {
+  color: var(--glass-text-dim);
+}

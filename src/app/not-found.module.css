@@ -1,0 +1,19 @@
+.notFoundContainer {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.notFoundIcon {
+  margin: 0 auto 10px;
+}
+
+.notFoundLede {
+  margin: 0 auto 24px;
+}
+
+.notFoundActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

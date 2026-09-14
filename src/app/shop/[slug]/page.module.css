@@ -1,0 +1,48 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 96px;
+}
+
+@media (max-width: 760px) {
+  .sticky {
+    position: static;
+  }
+}
+
+.heroMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 18px;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  margin-top: 10px;
+  color: var(--glass-text);
+}
+
+.description {
+  color: var(--glass-text-dim);
+}

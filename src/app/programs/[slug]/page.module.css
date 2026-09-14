@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 96px;
+}
+
+@media (max-width: 760px) {
+  .sticky {
+    position: static;
+  }
+}
+
+.title {
+  margin-top: 10px;
+  color: var(--glass-text);
+}
+
+.description {
+  color: var(--glass-text-dim);
+}

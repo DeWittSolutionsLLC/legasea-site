@@ -2,6 +2,7 @@ import PageHero from "@/components/PageHero";
 import BentoGrid from "@/components/BentoGrid";
 import FeaturedPanel from "@/components/FeaturedPanel";
 import { shopProducts } from "@/lib/data";
+import styles from "./page.module.css";
 export const metadata = {
   title: "Shop",
   description:
@@ -22,14 +23,7 @@ export default function ShopPage() {
       />
 
       <div className="container section">
-        <h2
-          style={{
-            marginBottom: 20,
-            color: "var(--glass-text)",
-          }}
-        >
-          Merch
-        </h2>
+        <h2 className={styles.sectionHeading}>Merch</h2>
         <BentoGrid
           items={merch.map((p, i) => ({
             href: `/shop/${p.slug}`,
@@ -47,19 +41,8 @@ export default function ShopPage() {
           }))}
         />
 
-        <div
-          style={{
-            marginTop: 56,
-          }}
-        >
-          <h2
-            style={{
-              marginBottom: 20,
-              color: "var(--glass-text)",
-            }}
-          >
-            Gift Cards
-          </h2>
+        <div className={styles.giftCardsSection}>
+          <h2 className={styles.sectionHeading}>Gift Cards</h2>
           {giftCards.map((p) => (
             <FeaturedPanel
               key={p.slug}
@@ -69,12 +52,7 @@ export default function ShopPage() {
               title={p.name}
               description={p.description}
               footer={
-                <span
-                  className="card-price"
-                  style={{
-                    fontSize: "1.3rem",
-                  }}
-                >
+                <span className={`card-price ${styles.giftCardPrice}`}>
                   From ${p.price}
                 </span>
               }

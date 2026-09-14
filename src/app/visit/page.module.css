@@ -1,0 +1,56 @@
+.sectionBlock {
+  margin-bottom: 64px;
+}
+
+.sectionBlockTight {
+  margin-bottom: 56px;
+}
+
+.sectionTitle {
+  margin-bottom: 4px;
+  color: var(--glass-text);
+}
+
+.sectionSubtitle {
+  color: var(--glass-text-dim);
+  margin-bottom: 20px;
+}
+
+.sectionSubtitleTight {
+  color: var(--glass-text-dim);
+  margin-bottom: 12px;
+}
+
+.priceLarge {
+  font-size: 1.3rem;
+}
+
+.priceMedium {
+  font-size: 1.15rem;
+}
+
+.durationMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--glass-text-dim);
+}
+
+.groupCallout {
+  padding: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.groupCalloutTitle {
+  margin-bottom: 4px;
+}
+
+.groupCalloutText {
+  margin: 0;
+  color: var(--glass-text-dim);
+}

@@ -3,7 +3,7 @@ import ProgramRegister from "@/components/ProgramRegister";
 import DetailHero from "@/components/DetailHero";
 import AmbientBackdrop from "@/components/AmbientBackdrop";
 import { findProgram, programs } from "@/lib/data";
-import styles from "@/app/experience/[slug]/page.module.css";
+import styles from "./page.module.css";
 export function generateStaticParams() {
   return programs.map((p) => ({
     slug: p.slug,
@@ -33,15 +33,8 @@ export default async function ProgramDetailPage(props) {
             alt={program.name}
           />
           <span className="tag tag--reptile">{program.ageRange}</span>
-          <h1
-            style={{
-              marginTop: 10,
-              color: "var(--glass-text)",
-            }}
-          >
-            {program.name}
-          </h1>
-          <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+          <h1 className={styles.title}>{program.name}</h1>
+          <p className={`lede ${styles.description}`}>
             {program.description}
           </p>
         </div>

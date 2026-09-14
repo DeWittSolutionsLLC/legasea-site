@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import StampHunt from "@/components/StampHunt";
+import styles from "./page.module.css";
 export const metadata = {
   title: "Digital Stamp Hunt",
   description:
@@ -19,25 +20,12 @@ export default function StampsPage() {
 
       <div className="container section">
         <div
-          className="card"
-          style={{
-            padding: 18,
-            marginBottom: 28,
-          }}
+          className={`card ${styles.demoNotice}`}
         >
-          <strong
-            style={{
-              color: "var(--coral-400)",
-            }}
-          >
+          <strong className={styles.demoNoticeLabel}>
             This is a live demo
           </strong>
-          <p
-            style={{
-              margin: "6px 0 0",
-              color: "var(--glass-text-dim)",
-            }}
-          >
+          <p className={styles.demoNoticeText}>
             On-site, each sticker has a real QR code — scanning it logs the
             stamp to your account automatically. Here, use &quot;Simulate
             Scan&quot; to preview the flow.

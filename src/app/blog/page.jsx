@@ -3,6 +3,7 @@ import NewsletterForm from "@/components/NewsletterForm";
 import FeaturedPanel from "@/components/FeaturedPanel";
 import CompactList from "@/components/CompactList";
 import { blogPosts } from "@/lib/data";
+import styles from "./page.module.css";
 export const metadata = {
   title: "Blog",
   description:
@@ -28,11 +29,7 @@ export default function BlogPage() {
 
       <div className="container section">
         {latest && (
-          <div
-            style={{
-              marginBottom: 40,
-            }}
-          >
+          <div className={styles.featuredWrap}>
             <FeaturedPanel
               href={`/blog/${latest.slug}`}
               icon={latest.icon}
@@ -40,12 +37,7 @@ export default function BlogPage() {
               title={latest.title}
               description={latest.excerpt}
               footer={
-                <span
-                  style={{
-                    color: "rgba(255,255,255,0.7)",
-                    fontSize: "0.88rem",
-                  }}
-                >
+                <span className={styles.featuredMeta}>
                   {formatDate(latest.date)} · {latest.readMinutes} min read
                 </span>
               }
@@ -61,13 +53,7 @@ export default function BlogPage() {
               title: post.title,
               meta: post.excerpt,
               trailing: (
-                <span
-                  style={{
-                    fontSize: "0.8rem",
-                    color: "var(--glass-text-dim)",
-                    textAlign: "right",
-                  }}
-                >
+                <span className={styles.listMeta}>
                   {formatDate(post.date)}
                   <br />
                   {post.readMinutes} min read
@@ -77,35 +63,12 @@ export default function BlogPage() {
           />
         )}
 
-        <div
-          className="card"
-          style={{
-            padding: 32,
-            textAlign: "center",
-            marginTop: 56,
-          }}
-        >
-          <h3
-            style={{
-              marginBottom: 6,
-            }}
-          >
-            Never miss a post
-          </h3>
-          <p
-            style={{
-              color: "var(--glass-text-dim)",
-              marginBottom: 18,
-            }}
-          >
+        <div className={`card ${styles.newsletterCard}`}>
+          <h3 className={styles.newsletterHeading}>Never miss a post</h3>
+          <p className={styles.newsletterText}>
             Get animal spotlights and event announcements in your inbox.
           </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
+          <div className={styles.newsletterFormWrap}>
             <NewsletterForm />
           </div>
         </div>

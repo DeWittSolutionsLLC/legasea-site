@@ -36,43 +36,18 @@ export default async function ExperiencePage(props) {
             alt={experience.name}
           />
           {zone && (
-            <span
-              className="tag"
-              style={{
-                marginBottom: 10,
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 5,
-              }}
-            >
+            <span className={`tag ${styles.zoneTag}`}>
               <IconBadge src="/images/icons/icon-pin.jpg" size={14} />
               {zone.name}
             </span>
           )}
-          <h1
-            style={{
-              marginTop: 10,
-              color: "var(--glass-text)",
-            }}
-          >
-            {experience.name}
-          </h1>
-          <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+          <h1 className={styles.title}>{experience.name}</h1>
+          <p className={`lede ${styles.description}`}>
             {experience.description}
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              gap: 10,
-              flexWrap: "wrap",
-              margin: "18px 0",
-            }}
-          >
-            <span
-              className="tag tag--coral"
-              style={{ display: "inline-flex", alignItems: "center", gap: 5 }}
-            >
+          <div className={styles.tagRow}>
+            <span className={`tag tag--coral ${styles.durationTag}`}>
               <IconBadge src="/images/icons/icon-stopwatch.jpg" size={14} />
               {experience.duration}
             </span>
@@ -82,30 +57,12 @@ export default async function ExperiencePage(props) {
           </div>
 
           {experience.category === "encounter" && (
-            <div
-              className="card"
-              style={{
-                padding: 18,
-                marginTop: 20,
-              }}
-            >
-              <strong
-                style={{
-                  color: "var(--coral-400)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                }}
-              >
+            <div className={`card ${styles.qrCard}`}>
+              <strong className={styles.qrHeading}>
                 <IconBadge src="/images/icons/icon-phone.jpg" size={18} />
                 Scanned this from a station QR code?
               </strong>
-              <p
-                style={{
-                  margin: "6px 0 0",
-                  color: "var(--glass-text-dim)",
-                }}
-              >
+              <p className={styles.qrText}>
                 You&apos;re in the right place — pick a time on the right and
                 you&apos;ll get an instant confirmation.
               </p>

@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import IconBadge from "@/components/IconBadge";
+import styles from "./page.module.css";
 export const metadata = {
   title: "Accessibility",
   description:
@@ -43,74 +44,28 @@ export default function AccessibilityPage() {
         image="/images/AccessibilityHero.jpg"
       />
 
-      <div
-        className="container section"
-        style={{
-          maxWidth: 800,
-        }}
-      >
-        <div
-          className="grid grid-2"
-          style={{
-            marginBottom: 48,
-          }}
-        >
+      <div className={`container section ${styles.pageContainer}`}>
+        <div className={`grid grid-2 ${styles.itemGrid}`}>
           {items.map((item) => (
-            <div
-              key={item.title}
-              className="card"
-              style={{
-                padding: 22,
-              }}
-            >
+            <div key={item.title} className={`card ${styles.itemCard}`}>
               <IconBadge
                 src={item.icon}
                 size={44}
-                style={{ marginBottom: 8 }}
+                className={styles.itemIcon}
                 aria-hidden="true"
               />
-              <h3
-                style={{
-                  marginBottom: 6,
-                }}
-              >
-                {item.title}
-              </h3>
-              <p
-                style={{
-                  margin: 0,
-                  color: "var(--glass-text-dim)",
-                }}
-              >
-                {item.text}
-              </p>
+              <h3 className={styles.itemTitle}>{item.title}</h3>
+              <p className={styles.itemText}>{item.text}</p>
             </div>
           ))}
         </div>
 
-        <div
-          className="card"
-          style={{
-            padding: 26,
-          }}
-        >
-          <h3
-            style={{
-              marginBottom: 8,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
+        <div className={`card ${styles.toolbarCard}`}>
+          <h3 className={styles.toolbarHeading}>
             <IconBadge src="/images/icons/icon-wheelchair.jpg" size={22} />
             On-site accessibility toolbar
           </h3>
-          <p
-            style={{
-              color: "var(--glass-text-dim)",
-              marginBottom: 0,
-            }}
-          >
+          <p className={styles.toolbarText}>
             Look for the accessibility button in the bottom-left corner of any
             page. It lets you increase text size and switch to a high-contrast
             color theme, and your preference is remembered on future visits to
@@ -122,20 +77,10 @@ export default function AccessibilityPage() {
 
         <hr className="divider" />
 
-        <p
-          style={{
-            color: "var(--glass-text-dim)",
-          }}
-        >
+        <p className={styles.contactText}>
           Notice something that isn&apos;t accessible, or have a request for
           your visit? Contact Guest Services at{" "}
-          <a
-            href="tel:+15555550123"
-            style={{
-              color: "var(--coral-400)",
-              fontWeight: 600,
-            }}
-          >
+          <a href="tel:+15555550123" className={styles.contactLink}>
             (555) 555-0123
           </a>{" "}
           — we&apos;re happy to help plan ahead.

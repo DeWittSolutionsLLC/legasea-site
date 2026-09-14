@@ -7,6 +7,7 @@ import {
   IconYouTube,
   IconFacebook,
 } from "@/components/icons";
+import styles from "./page.module.css";
 export const metadata = {
   title: "Connect",
   description:
@@ -54,25 +55,13 @@ export default function ConnectPage() {
         crumbLabel="Connect"
         image="/images/ConnectHero.png"
       >
-        <p
-          style={{
-            color: "var(--glass-text-dim)",
-            maxWidth: "44ch",
-            margin: "10px 0 20px",
-          }}
-        >
+        <p className={styles.heroLead}>
           Follow LegaSea for animal encounters, behind-the-scenes moments, new
           arrivals, events, and everything happening around the aquarium and
           zoo.
         </p>
 
-        <div
-          style={{
-            display: "flex",
-            gap: 10,
-            marginBottom: 18,
-          }}
-        >
+        <div className={styles.socialRow}>
           {channels
             .filter((c) => c.href.startsWith("http"))
             .map((c) => (
@@ -82,51 +71,22 @@ export default function ConnectPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={c.label}
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  background: "var(--glass-bg-strong)",
-                  border: "1px solid var(--glass-border)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "white",
-                }}
+                className={styles.socialIcon}
               >
                 <c.icon size={20} />
               </a>
             ))}
         </div>
 
-        <p
-          style={{
-            fontFamily: "var(--font-accent)",
-            fontSize: "0.85rem",
-            fontWeight: 700,
-            letterSpacing: "0.4px",
-            color: "var(--reef-glow)",
-            margin: 0,
-          }}
-        >
+        <p className={styles.hashtagLine}>
           #LegaSeaAquarium &nbsp; #TheReptarium &nbsp; #GetCloserToWild
         </p>
       </PageHero>
 
       <div
-        className="container section"
-        style={{
-          maxWidth: 640,
-        }}
+        className={`container section ${styles.pageContainer}`}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 14,
-            marginBottom: 40,
-          }}
-        >
+        <div className={styles.channelList}>
           {channels.map((c) => (
             <a
               key={c.label}
@@ -135,19 +95,10 @@ export default function ConnectPage() {
               rel={
                 c.href.startsWith("http") ? "noopener noreferrer" : undefined
               }
-              className="card"
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                padding: "16px 20px",
-                gap: 16,
-              }}
+              className={`card ${styles.channelCard}`}
             >
               <span
-                style={{
-                  fontSize: "1.8rem",
-                  display: "flex",
-                }}
+                className={styles.channelIcon}
                 aria-hidden="true"
               >
                 {typeof c.icon === "string" ? (
@@ -156,33 +107,17 @@ export default function ConnectPage() {
                   <c.icon size={26} />
                 )}
               </span>
-              <span
-                style={{
-                  flex: 1,
-                }}
-              >
-                <strong
-                  style={{
-                    display: "block",
-                    fontFamily: "var(--font-display)",
-                  }}
-                >
+              <span className={styles.channelInfo}>
+                <strong className={styles.channelLabel}>
                   {c.label}
                 </strong>
-                <span
-                  style={{
-                    color: "var(--glass-text-dim)",
-                    fontSize: "0.88rem",
-                  }}
-                >
+                <span className={styles.channelHandle}>
                   {c.handle}
                 </span>
               </span>
               <span
                 aria-hidden="true"
-                style={{
-                  color: "var(--glass-text-dim)",
-                }}
+                className={styles.channelArrow}
               >
                 →
               </span>
@@ -191,33 +126,15 @@ export default function ConnectPage() {
         </div>
 
         <div
-          className="card"
-          style={{
-            padding: 26,
-            textAlign: "center",
-          }}
+          className={`card ${styles.newsletterCard}`}
         >
-          <h3
-            style={{
-              marginBottom: 6,
-            }}
-          >
+          <h3 className={styles.newsletterTitle}>
             Subscribe to the newsletter
           </h3>
-          <p
-            style={{
-              color: "var(--glass-text-dim)",
-              marginBottom: 18,
-            }}
-          >
+          <p className={styles.newsletterText}>
             Animal spotlights, conservation updates, and event announcements.
           </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
+          <div className={styles.newsletterFormRow}>
             <NewsletterForm />
           </div>
         </div>

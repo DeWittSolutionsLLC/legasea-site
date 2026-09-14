@@ -4,7 +4,7 @@ import DetailHero from "@/components/DetailHero";
 import AmbientBackdrop from "@/components/AmbientBackdrop";
 import IconBadge from "@/components/IconBadge";
 import { findParty, parties } from "@/lib/data";
-import styles from "@/app/experience/[slug]/page.module.css";
+import styles from "./page.module.css";
 export function generateStaticParams() {
   return parties.map((p) => ({
     slug: p.slug,
@@ -29,46 +29,26 @@ export default async function PartyDetailPage(props) {
       <div className={styles.grid}>
         <div>
           <DetailHero icon={party.icon} image={party.image} alt={party.name} />
-          <h1 style={{ color: "var(--glass-text)" }}>{party.name}</h1>
-          <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+          <h1 className={styles.title}>{party.name}</h1>
+          <p className={`lede ${styles.description}`}>
             {party.description}
           </p>
 
-          <h3 style={{ color: "var(--glass-text)" }}>What&apos;s included</h3>
-          <ul
-            style={{
-              display: "grid",
-              gap: 10,
-            }}
-          >
+          <h3 className={styles.subheading}>What&apos;s included</h3>
+          <ul className={styles.includesList}>
             {party.includes.map((item) => (
-              <li
-                key={item}
-                style={{
-                  display: "flex",
-                  gap: 10,
-                  alignItems: "flex-start",
-                  color: "var(--glass-text-dim)",
-                }}
-              >
+              <li key={item} className={styles.includesItem}>
                 <IconBadge
                   src="/images/icons/icon-check.jpg"
                   size={18}
-                  style={{ flexShrink: 0 }}
+                  className={styles.includesIcon}
                 />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
 
-          <p
-            className="card-price"
-            style={{
-              fontSize: "1.4rem",
-              marginTop: 20,
-              color: "var(--coral-400)",
-            }}
-          >
+          <p className={`card-price ${styles.priceTag}`}>
             Starting at ${party.startingPrice}
           </p>
         </div>

@@ -21,3 +21,49 @@
     position: static;
   }
 }
+
+.zoneTag {
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.title {
+  margin-top: 10px;
+  color: var(--glass-text);
+}
+
+.description {
+  color: var(--glass-text-dim);
+}
+
+.tagRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.durationTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.qrCard {
+  padding: 18px;
+  margin-top: 20px;
+}
+
+.qrHeading {
+  color: var(--coral-400);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qrText {
+  margin: 6px 0 0;
+  color: var(--glass-text-dim);
+}

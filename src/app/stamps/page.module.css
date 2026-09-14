@@ -1,0 +1,13 @@
+.demoNotice {
+  padding: 18px;
+  margin-bottom: 28px;
+}
+
+.demoNoticeLabel {
+  color: var(--coral-400);
+}
+
+.demoNoticeText {
+  margin: 6px 0 0;
+  color: var(--glass-text-dim);
+}

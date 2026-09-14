@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import ShopProductActions from "@/components/ShopProductActions";
 import AmbientBackdrop from "@/components/AmbientBackdrop";
 import { findProduct, shopProducts } from "@/lib/data";
-import styles from "@/app/experience/[slug]/page.module.css";
+import styles from "./page.module.css";
 export function generateStaticParams() {
   return shopProducts.map((p) => ({
     slug: p.slug,
@@ -26,36 +26,19 @@ export default async function ShopProductPage(props) {
       <AmbientBackdrop tone="coral" />
       <div className={styles.grid}>
         <div>
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              aspectRatio: "4 / 3",
-              borderRadius: "var(--radius-lg)",
-              overflow: "hidden",
-              boxShadow: "var(--shadow-md)",
-              marginBottom: 18,
-            }}
-          >
+          <div className={styles.heroMedia}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={product.icon}
               alt={product.name}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              className={styles.heroImage}
             />
           </div>
           <span className="tag">
             {product.type === "gift-card" ? "Gift Card" : "Merch"}
           </span>
-          <h1
-            style={{
-              marginTop: 10,
-              color: "var(--glass-text)",
-            }}
-          >
-            {product.name}
-          </h1>
-          <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+          <h1 className={styles.title}>{product.name}</h1>
+          <p className={`lede ${styles.description}`}>
             {product.description}
           </p>
         </div>

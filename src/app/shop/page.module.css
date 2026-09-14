@@ -1,0 +1,12 @@
+.sectionHeading {
+  margin-bottom: 20px;
+  color: var(--glass-text);
+}
+
+.giftCardsSection {
+  margin-top: 56px;
+}
+
+.giftCardPrice {
+  font-size: 1.3rem;
+}

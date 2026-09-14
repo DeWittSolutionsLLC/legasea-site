@@ -1,0 +1,36 @@
+.article {
+  max-width: 760px;
+}
+
+.backLink {
+  color: var(--glass-text);
+  font-size: 0.9rem;
+}
+
+.thumbnail {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 18px 0 6px;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  margin-top: 10px;
+  color: var(--glass-text);
+}
+
+.meta {
+  color: var(--glass-text-dim);
+  margin-bottom: 30px;
+}
+
+.bodyParagraph {
+  color: var(--glass-text-dim);
+}

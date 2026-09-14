@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import AmbientBackdrop from "@/components/AmbientBackdrop";
 import { blogPosts, findBlogPost } from "@/lib/data";
+import styles from "./page.module.css";
 export function generateStaticParams() {
   return blogPosts.map((p) => ({
     slug: p.slug,
@@ -21,54 +22,23 @@ export default async function BlogPostPage(props) {
   const post = findBlogPost(slug);
   if (!post) notFound();
   return (
-    <article
-      className="container section"
-      style={{
-        maxWidth: 760,
-      }}
-    >
+    <article className={`container section ${styles.article}`}>
       <AmbientBackdrop tone="ocean" />
-      <Link
-        href="/blog"
-        style={{
-          color: "var(--glass-text)",
-          fontSize: "0.9rem",
-        }}
-      >
+      <Link href="/blog" className={styles.backLink}>
         ← Back to Blog
       </Link>
 
-      <div
-        style={{
-          width: 72,
-          height: 72,
-          borderRadius: "var(--radius-md)",
-          overflow: "hidden",
-          margin: "18px 0 6px",
-        }}
-      >
+      <div className={styles.thumbnail}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={post.icon}
           alt={post.title}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          className={styles.thumbnailImage}
         />
       </div>
       <span className="tag">{post.category}</span>
-      <h1
-        style={{
-          marginTop: 10,
-          color: "var(--glass-text)",
-        }}
-      >
-        {post.title}
-      </h1>
-      <p
-        style={{
-          color: "var(--glass-text-dim)",
-          marginBottom: 30,
-        }}
-      >
+      <h1 className={styles.title}>{post.title}</h1>
+      <p className={styles.meta}>
         By {post.author} ·{" "}
         {new Date(post.date).toLocaleDateString(undefined, {
           month: "long",
@@ -79,13 +49,7 @@ export default async function BlogPostPage(props) {
       </p>
 
       {post.body.map((para, i) => (
-        <p
-          key={i}
-          className="lede"
-          style={{
-            color: "var(--glass-text-dim)",
-          }}
-        >
+        <p key={i} className={`lede ${styles.bodyParagraph}`}>
           {para}
         </p>
       ))}

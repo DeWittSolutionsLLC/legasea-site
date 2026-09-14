@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import styles from "./page.module.css";
 export const metadata = {
   title: "Our Story",
   description:
@@ -44,79 +45,24 @@ export default function OurStoryPage() {
         crumbLabel="Our Story"
       />
 
-      <div
-        className="container section"
-        style={{
-          maxWidth: 800,
-        }}
-      >
-        <div
-          className="card"
-          style={{
-            padding: "32px 20px",
-            marginBottom: 40,
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+      <div className={`container section ${styles.pageContainer}`}>
+        <div className={`card ${styles.logoCard}`}>
           <Image
             src="/images/LegaseaLogoFull.webp"
             alt="LegaSea Aquarium & The Reptarium"
             width={1024}
             height={727}
-            style={{
-              height: "auto",
-              width: "min(360px, 100%)",
-            }}
+            className={styles.logoImage}
           />
         </div>
 
-        <div
-          
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 28,
-          }}
-        >
+        <div className={styles.milestoneList}>
           {milestones.map((m) => (
-            <div
-              className="card"
-              key={m.year}
-              style={{
-                display: "flex",
-                gap: 20,
-                padding: "22px 24px",
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "var(--font-display)",
-                  color: "var(--coral-400)",
-                  fontWeight: 700,
-                  minWidth: 70,
-                  fontSize: "1.05rem",
-                }}
-              >
-                {m.year}
-              </div>
+            <div className={`card ${styles.milestoneCard}`} key={m.year}>
+              <div className={styles.milestoneYear}>{m.year}</div>
               <div>
-                <h3
-                  style={{
-                    marginBottom: 4,
-                    color: "var(--glass-text)",
-                  }}
-                >
-                  {m.title}
-                </h3>
-                <p
-                  style={{
-                    margin: 0,
-                    color: "var(--glass-text-dim)",
-                  }}
-                >
-                  {m.text}
-                </p>
+                <h3 className={styles.milestoneTitle}>{m.title}</h3>
+                <p className={styles.milestoneText}>{m.text}</p>
               </div>
             </div>
           ))}
@@ -124,25 +70,11 @@ export default function OurStoryPage() {
 
         <hr className="divider" />
 
-        <div
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <h2
-            style={{
-              color: "var(--glass-text)",
-            }}
-          >
+        <div className={styles.ctaSection}>
+          <h2 className={styles.ctaHeading}>
             Come meet the animals behind the story
           </h2>
-          <p
-            className="lede"
-            style={{
-              margin: "0 auto 20px",
-              color: "var(--glass-text-dim)",
-            }}
-          >
+          <p className={`lede ${styles.ctaLede}`}>
             Every rescue story continues on-site — ask any keeper about the
             animal in front of you.
           </p>

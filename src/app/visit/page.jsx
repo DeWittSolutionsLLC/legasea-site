@@ -5,6 +5,7 @@ import EditorialList from "@/components/EditorialList";
 import CompactList from "@/components/CompactList";
 import { IconClock } from "@/components/icons";
 import { experiences } from "@/lib/data";
+import styles from "./page.module.css";
 export const metadata = {
   title: "Visit",
   description:
@@ -26,25 +27,11 @@ export default function VisitPage() {
 
       <div className="container section">
         {admission.length > 0 && (
-          <div
-            style={{
-              marginBottom: 64,
-            }}
-          >
-            <h2
-              style={{
-                marginBottom: 4,
-                color: "var(--glass-text)",
-              }}
-            >
+          <div className={styles.sectionBlock}>
+            <h2 className={styles.sectionTitle}>
               General Admission
             </h2>
-            <p
-              style={{
-                color: "var(--glass-text-dim)",
-                marginBottom: 20,
-              }}
-            >
+            <p className={styles.sectionSubtitle}>
               Your ticket into every hall and show, all day.
             </p>
             {admission.map((exp) => (
@@ -58,10 +45,7 @@ export default function VisitPage() {
                 description={exp.description}
                 footer={
                   <span
-                    className="card-price"
-                    style={{
-                      fontSize: "1.3rem",
-                    }}
+                    className={`card-price ${styles.priceLarge}`}
                   >
                     ${exp.price}
                   </span>
@@ -72,25 +56,11 @@ export default function VisitPage() {
         )}
 
         {tours.length > 0 && (
-          <div
-            style={{
-              marginBottom: 64,
-            }}
-          >
-            <h2
-              style={{
-                marginBottom: 4,
-                color: "var(--glass-text)",
-              }}
-            >
+          <div className={styles.sectionBlock}>
+            <h2 className={styles.sectionTitle}>
               Guided Tours
             </h2>
-            <p
-              style={{
-                color: "var(--glass-text-dim)",
-                marginBottom: 12,
-              }}
-            >
+            <p className={styles.sectionSubtitleTight}>
               Small-group, keeper-led experiences with limited daily slots.
             </p>
             <EditorialList
@@ -104,10 +74,7 @@ export default function VisitPage() {
                 footer: (
                   <>
                     <span
-                      className="card-price"
-                      style={{
-                        fontSize: "1.15rem",
-                      }}
+                      className={`card-price ${styles.priceMedium}`}
                     >
                       ${exp.price}
                     </span>
@@ -120,25 +87,11 @@ export default function VisitPage() {
         )}
 
         {encounters.length > 0 && (
-          <div
-            style={{
-              marginBottom: 56,
-            }}
-          >
-            <h2
-              style={{
-                marginBottom: 4,
-                color: "var(--glass-text)",
-              }}
-            >
+          <div className={styles.sectionBlockTight}>
+            <h2 className={styles.sectionTitle}>
               Animal Encounters
             </h2>
-            <p
-              style={{
-                color: "var(--glass-text-dim)",
-                marginBottom: 20,
-              }}
-            >
+            <p className={styles.sectionSubtitle}>
               Short, hands-on moments — the same booking flow you&apos;ll find
               at each station QR code.
             </p>
@@ -151,15 +104,7 @@ export default function VisitPage() {
                 meta: exp.summary,
                 trailing: (
                   <>
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 4,
-                        fontSize: "0.8rem",
-                        color: "var(--glass-text-dim)",
-                      }}
-                    >
+                    <span className={styles.durationMeta}>
                       <IconClock size={12} /> {exp.duration}
                     </span>
                     <span className="card-price">${exp.price}</span>
@@ -171,30 +116,13 @@ export default function VisitPage() {
         )}
 
         <div
-          className="card"
-          style={{
-            padding: 28,
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 16,
-          }}
+          className={`card ${styles.groupCallout}`}
         >
           <div>
-            <h3
-              style={{
-                marginBottom: 4,
-              }}
-            >
+            <h3 className={styles.groupCalloutTitle}>
               Planning a group visit instead?
             </h3>
-            <p
-              style={{
-                margin: 0,
-                color: "var(--glass-text-dim)",
-              }}
-            >
+            <p className={styles.groupCalloutText}>
               Birthday parties, field trips, and offsite events have their own
               packages.
             </p>

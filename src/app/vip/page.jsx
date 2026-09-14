@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import MemberCard from "@/components/MemberCard";
 import GeofenceDemo from "@/components/GeofenceDemo";
 import IconBadge from "@/components/IconBadge";
-import styles from "@/app/experience/[slug]/page.module.css";
+import styles from "./page.module.css";
 export const metadata = {
   title: "VIP & Membership",
   description:
@@ -53,48 +53,18 @@ export default function VipPage() {
       />
 
       <div className="container section">
-        <div
-          className="grid grid-3"
-          style={{
-            marginBottom: 48,
-          }}
-        >
+        <div className={`grid grid-3 ${styles.tiersGrid}`}>
           {tiers.map((tier) => (
-            <div
-              key={tier.name}
-              className="card"
-              style={{
-                padding: 24,
-              }}
-            >
+            <div key={tier.name} className={`card ${styles.tierCard}`}>
               <span className="tag tag--coral">{tier.price}</span>
-              <h3
-                style={{
-                  margin: "10px 0 14px",
-                }}
-              >
-                {tier.name}
-              </h3>
-              <ul
-                style={{
-                  display: "grid",
-                  gap: 8,
-                  marginBottom: 18,
-                }}
-              >
+              <h3 className={styles.tierName}>{tier.name}</h3>
+              <ul className={styles.perkList}>
                 {tier.perks.map((perk) => (
-                  <li
-                    key={perk}
-                    style={{
-                      display: "flex",
-                      gap: 8,
-                      fontSize: "0.92rem",
-                    }}
-                  >
+                  <li key={perk} className={styles.perkItem}>
                     <IconBadge
                       src="/images/icons/icon-check.jpg"
                       size={18}
-                      style={{ flexShrink: 0 }}
+                      className={styles.perkIcon}
                     />
                     <span>{perk}</span>
                   </li>
@@ -112,10 +82,8 @@ export default function VipPage() {
 
         <div className={styles.grid}>
           <div>
-            <h2 style={{ color: "var(--glass-text)" }}>
-              Your digital member card
-            </h2>
-            <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+            <h2 className={styles.sectionTitle}>Your digital member card</h2>
+            <p className={`lede ${styles.sectionLede}`}>
               Membership is tracked automatically — this preview shows the card
               guests would see in their account, plus how a station scan logs
               against it.
@@ -123,8 +91,8 @@ export default function VipPage() {
             <MemberCard />
           </div>
           <div>
-            <h2 style={{ color: "var(--glass-text)" }}>Nearby offers</h2>
-            <p className="lede" style={{ color: "var(--glass-text-dim)" }}>
+            <h2 className={styles.sectionTitle}>Nearby offers</h2>
+            <p className={`lede ${styles.sectionLede}`}>
               Geo-fencing (Phase 4) triggers offers automatically as members
               approach the property.
             </p>

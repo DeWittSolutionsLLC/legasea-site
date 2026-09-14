@@ -1,0 +1,8 @@
+.startingPrice {
+  font-size: 1.15rem;
+}
+
+.summaryText {
+  color: var(--glass-text-dim);
+  font-size: 0.9rem;
+}

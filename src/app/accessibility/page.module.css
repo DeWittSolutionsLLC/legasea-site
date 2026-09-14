@@ -1,0 +1,49 @@
+.pageContainer {
+  max-width: 800px;
+}
+
+.itemGrid {
+  margin-bottom: 48px;
+}
+
+.itemCard {
+  padding: 22px;
+}
+
+.itemIcon {
+  margin-bottom: 8px;
+}
+
+.itemTitle {
+  margin-bottom: 6px;
+}
+
+.itemText {
+  margin: 0;
+  color: var(--glass-text-dim);
+}
+
+.toolbarCard {
+  padding: 26px;
+}
+
+.toolbarHeading {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbarText {
+  color: var(--glass-text-dim);
+  margin-bottom: 0;
+}
+
+.contactText {
+  color: var(--glass-text-dim);
+}
+
+.contactLink {
+  color: var(--coral-400);
+  font-weight: 600;
+}
