@@ -92,3 +92,34 @@
   margin-top: 10px;
   text-decoration: underline;
 }
+
+/* The panel's background is a fixed dark overlay (not the themeable
+   --glass-bg token), so high-contrast mode — which repoints
+   --glass-text to pure black — needs its own override here or the
+   panel's own text goes black-on-dark and becomes unreadable. */
+body[data-contrast="high"] .toggle {
+  background: #000000;
+  border: 2px solid #ffffff;
+}
+
+body[data-contrast="high"] .panel {
+  background: #ffffff;
+  border-color: #000000;
+}
+
+body[data-contrast="high"] .panelTitle,
+body[data-contrast="high"] .rowLabel,
+body[data-contrast="high"] .link {
+  color: #000000;
+}
+
+body[data-contrast="high"] .optionBtn {
+  background: #ffffff;
+  border-color: #000000;
+  color: #000000;
+}
+
+body[data-contrast="high"] .optionBtn[data-active="true"] {
+  background: #000000;
+  color: #ffffff;
+}
