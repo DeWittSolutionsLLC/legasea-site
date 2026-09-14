@@ -1,4 +1,5 @@
 import Link from "next/link";
+import IconBadge from "@/components/IconBadge";
 export default function NotFound() {
   return (
     <div
@@ -8,22 +9,11 @@ export default function NotFound() {
         padding: "100px 20px",
       }}
     >
-      <div
-        style={{
-          width: 96,
-          height: 96,
-          borderRadius: "50%",
-          overflow: "hidden",
-          margin: "0 auto 10px",
-        }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/icons/icon-fish.jpg"
-          alt=""
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      </div>
+      <IconBadge
+        src="/images/icons/icon-fish.jpg"
+        size={96}
+        style={{ margin: "0 auto 10px" }}
+      />
       <h1>This page swam away</h1>
       <p
         className="lede"

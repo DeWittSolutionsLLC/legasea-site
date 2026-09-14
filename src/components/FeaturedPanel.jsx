@@ -13,7 +13,7 @@ export default function FeaturedPanel({
     <Link href={href} className={styles.panel}>
       <div className={styles.media}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image ?? icon} alt="" loading="lazy" />
+        <img src={image ?? icon} alt={title} loading="lazy" />
       </div>
       <div className={styles.body}>
         {tag}

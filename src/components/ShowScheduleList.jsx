@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./ShowScheduleList.module.css";
+import IconBadge from "@/components/IconBadge";
 import { formatShowTime, getUpcomingShow, isShowLive, shows } from "@/lib/data";
 export default function ShowScheduleList() {
   const [now, setNow] = useState(null);
@@ -30,15 +31,10 @@ export default function ShowScheduleList() {
             <div className={styles.body}>
               <div className={styles.name}>{show.name}</div>
               <div className={styles.meta}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <IconBadge
                   src="/images/icons/icon-pin.jpg"
-                  alt=""
+                  size={18}
                   style={{
-                    width: 18,
-                    height: 18,
-                    borderRadius: "50%",
-                    objectFit: "cover",
                     display: "inline-block",
                     verticalAlign: "middle",
                     marginRight: 4,

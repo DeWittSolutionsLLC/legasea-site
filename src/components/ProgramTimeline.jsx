@@ -12,7 +12,11 @@ export default function ProgramTimeline({ steps }) {
           <Link href={step.href} className={styles.card}>
             <div className={styles.media}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={step.image ?? step.icon} alt="" loading="lazy" />
+              <img
+              src={step.image ?? step.icon}
+              alt={step.title}
+              loading="lazy"
+            />
             </div>
             <div className={styles.body}>
               <h3 className={styles.title}>{step.title}</h3>

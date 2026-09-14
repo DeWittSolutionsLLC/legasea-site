@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./ZoneMap.module.css";
+import IconBadge from "@/components/IconBadge";
 import { experiences, zones } from "@/lib/data";
 const TOUR_ORDER = [
   "welcome-plaza",
@@ -75,7 +76,7 @@ export default function ZoneMap() {
             </span>
             <button
               type="button"
-              className="btn btn-outline btn-sm"
+              className="btn btn-outline btn-outline--glass btn-sm"
               onClick={() => stepTour(-1)}
               disabled={tourStep === 0}
             >
@@ -91,7 +92,7 @@ export default function ZoneMap() {
             </button>
             <button
               type="button"
-              className="btn btn-outline btn-sm"
+              className="btn btn-outline btn-outline--glass btn-sm"
               onClick={() => setTourActive(false)}
             >
               End Tour
@@ -105,17 +106,7 @@ export default function ZoneMap() {
           className={styles.youAreHere}
           style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/icons/icon-pin.jpg"
-            alt=""
-            style={{
-              width: 18,
-              height: 18,
-              borderRadius: "50%",
-              objectFit: "cover",
-            }}
-          />
+          <IconBadge src="/images/icons/icon-pin.jpg" size={18} />
           You are here: Welcome Plaza
         </span>
 
@@ -167,17 +158,7 @@ export default function ZoneMap() {
           className="eyebrow eyebrow--ocean"
           style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={zone.icon}
-            alt=""
-            style={{
-              width: 30,
-              height: 30,
-              borderRadius: "50%",
-              objectFit: "cover",
-            }}
-          />
+          <IconBadge src={zone.icon} size={30} />
           {zone.name}
         </span>
         <p
@@ -222,19 +203,9 @@ export default function ZoneMap() {
                 <Link
                   key={e.slug}
                   href={`/experience/${e.slug}`}
-                  className="btn btn-outline btn-sm"
+                  className="btn btn-outline btn-outline--glass btn-sm"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={e.icon}
-                    alt=""
-                    style={{
-                      width: 30,
-                      height: 30,
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                    }}
-                  />
+                  <IconBadge src={e.icon} size={30} />
                   {e.name}
                 </Link>
               ))}
@@ -252,22 +223,7 @@ export default function ZoneMap() {
             data-active={selected === z.slug}
             onClick={() => setSelected(z.slug)}
           >
-            <div
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                overflow: "hidden",
-              }}
-              aria-hidden="true"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={z.icon}
-                alt=""
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
+            <IconBadge src={z.icon} size={32} aria-hidden="true" />
             <strong
               style={{
                 fontFamily: "var(--font-display)",

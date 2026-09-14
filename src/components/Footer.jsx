@@ -12,7 +12,7 @@ const socials = [
   {
     label: "Instagram",
     icon: IconInstagram,
-    href: "http://instagram.com/legaseaaquarium",
+    href: "https://instagram.com/legaseaaquarium",
   },
   {
     label: "TikTok",

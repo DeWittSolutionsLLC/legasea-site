@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import NewsletterForm from "@/components/NewsletterForm";
+import IconBadge from "@/components/IconBadge";
 import {
   IconInstagram,
   IconTikTok,
@@ -16,7 +17,7 @@ const channels = [
     label: "Instagram",
     icon: IconInstagram,
     handle: "@legaseaaquarium",
-    href: "http://instagram.com/legaseaaquarium",
+    href: "https://instagram.com/legaseaaquarium",
   },
   {
     label: "TikTok",
@@ -150,17 +151,7 @@ export default function ConnectPage() {
                 aria-hidden="true"
               >
                 {typeof c.icon === "string" ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={c.icon}
-                    alt=""
-                    style={{
-                      width: 26,
-                      height: 26,
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                    }}
-                  />
+                  <IconBadge src={c.icon} size={26} />
                 ) : (
                   <c.icon size={26} />
                 )}

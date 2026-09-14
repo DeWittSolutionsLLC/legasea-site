@@ -40,7 +40,7 @@ export default async function ShopProductPage(props) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={product.icon}
-              alt=""
+              alt={product.name}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </div>

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import InquiryForm from "@/components/InquiryForm";
 import DetailHero from "@/components/DetailHero";
 import AmbientBackdrop from "@/components/AmbientBackdrop";
+import IconBadge from "@/components/IconBadge";
 import { findParty, parties } from "@/lib/data";
 import styles from "@/app/experience/[slug]/page.module.css";
 export function generateStaticParams() {
@@ -50,17 +51,10 @@ export default async function PartyDetailPage(props) {
                   color: "var(--glass-text-dim)",
                 }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <IconBadge
                   src="/images/icons/icon-check.jpg"
-                  alt=""
-                  style={{
-                    width: 18,
-                    height: 18,
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    flexShrink: 0,
-                  }}
+                  size={18}
+                  style={{ flexShrink: 0 }}
                 />
                 <span>{item}</span>
               </li>

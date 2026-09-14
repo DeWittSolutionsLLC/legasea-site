@@ -9,6 +9,7 @@ import MediaThumb from "@/components/MediaThumb";
 import ForegroundAccents from "@/components/ForegroundAccents";
 import SocialFeed from "@/components/SocialFeed";
 import AnimalSpotlight from "@/components/AnimalSpotlight";
+import IconBadge from "@/components/IconBadge";
 import {
   IconClock,
   IconTicket,
@@ -286,18 +287,11 @@ export default function Home() {
                 "/images/icons/icon-ray.jpg",
                 "/images/icons/icon-crab.jpg",
               ].map((src) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <IconBadge
                   key={src}
                   src={src}
-                  alt=""
-                  style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    border: "2px solid rgba(255,255,255,0.4)",
-                  }}
+                  size={40}
+                  style={{ border: "2px solid rgba(255,255,255,0.4)" }}
                 />
               ))}
             </div>
@@ -342,7 +336,7 @@ export default function Home() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={post.icon}
-                    alt=""
+                    alt={post.title}
                     loading="lazy"
                     style={{
                       width: "100%",

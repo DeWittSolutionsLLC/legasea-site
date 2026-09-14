@@ -1,4 +1,5 @@
 import styles from "./SocialFeed.module.css";
+import IconBadge from "@/components/IconBadge";
 
 // Placeholder feed — swap for a real Instagram Graph API / embed widget
 // (e.g. SnapWidget, Elfsight) once a live business account is connected.
@@ -40,7 +41,7 @@ export default function SocialFeed() {
       {POSTS.map((post, i) => (
         <a
           key={i}
-          href="http://instagram.com/legaseaaquarium"
+          href="https://instagram.com/legaseaaquarium"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.post}
@@ -51,15 +52,10 @@ export default function SocialFeed() {
           <span className={styles.overlay}>
             <p className={styles.caption}>{post.caption}</p>
             <span className={styles.meta}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <IconBadge
                 src="/images/icons/icon-heart.jpg"
-                alt=""
+                size={14}
                 style={{
-                  width: 14,
-                  height: 14,
-                  borderRadius: "50%",
-                  objectFit: "cover",
                   display: "inline-block",
                   verticalAlign: "middle",
                   marginRight: 4,

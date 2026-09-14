@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "@/components/BookingWidget.module.css";
+import styles from "@/components/PurchaseWidget.module.css";
 export default function ProgramRegister({ program }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");

@@ -19,13 +19,15 @@ export default function StampHunt() {
   const [claimed, setClaimed] = useState(false);
   const [staffInput, setStaffInput] = useState("");
   const [staffResult, setStaffResult] = useState("idle");
-  const [redemptionCode] = useState(makeCode);
+  const [redemptionCode, setRedemptionCode] = useState("");
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    // Reads localStorage (unavailable during SSR) once on mount.
+    // Reads localStorage (unavailable during SSR) once on mount, and
+    // generates the redemption code client-side to match.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setScans(loadScans());
     setClaimed(localStorage.getItem(`${STORAGE_KEY}-claimed`) === "true");
+    setRedemptionCode(makeCode());
     setLoaded(true);
   }, []);
   useEffect(() => {
@@ -78,7 +80,7 @@ export default function StampHunt() {
         {found > 0 && (
           <button
             type="button"
-            className="btn btn-outline btn-sm"
+            className="btn btn-outline btn-outline--glass btn-sm"
             onClick={resetDemo}
           >
             Reset demo

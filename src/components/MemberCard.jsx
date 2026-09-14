@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import IconBadge from "@/components/IconBadge";
 const STORAGE_KEY = "legasea-member-id";
 function makeId() {
   return `LS-VIP-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
@@ -63,23 +64,12 @@ export default function MemberCard() {
             LegaSea Scan Card
           </div>
         </div>
-        <span
-          style={{
-            width: 32,
-            height: 32,
-            borderRadius: "50%",
-            overflow: "hidden",
-            display: "block",
-          }}
+        <IconBadge
+          src="/images/icons/icon-vest.jpg"
+          size={32}
+          style={{ display: "block" }}
           aria-hidden="true"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/icons/icon-vest.jpg"
-            alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </span>
+        />
       </div>
 
       <div

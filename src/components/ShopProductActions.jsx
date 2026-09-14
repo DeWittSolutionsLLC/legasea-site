@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "@/components/BookingWidget.module.css";
+import styles from "@/components/PurchaseWidget.module.css";
 export default function ShopProductActions({ product }) {
   const [variant, setVariant] = useState(product.variants?.[0] ?? "");
   const [quantity, setQuantity] = useState(1);

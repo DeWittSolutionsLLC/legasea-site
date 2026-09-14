@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import BookingWidget from "@/components/BookingWidget";
 import DetailHero from "@/components/DetailHero";
 import AmbientBackdrop from "@/components/AmbientBackdrop";
+import IconBadge from "@/components/IconBadge";
 import { experiences, findExperience, findZone } from "@/lib/data";
 import styles from "./page.module.css";
 export function generateStaticParams() {
@@ -44,17 +45,7 @@ export default async function ExperiencePage(props) {
                 gap: 5,
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/icons/icon-pin.jpg"
-                alt=""
-                style={{
-                  width: 14,
-                  height: 14,
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                }}
-              />
+              <IconBadge src="/images/icons/icon-pin.jpg" size={14} />
               {zone.name}
             </span>
           )}
@@ -82,17 +73,7 @@ export default async function ExperiencePage(props) {
               className="tag tag--coral"
               style={{ display: "inline-flex", alignItems: "center", gap: 5 }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/icons/icon-stopwatch.jpg"
-                alt=""
-                style={{
-                  width: 14,
-                  height: 14,
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                }}
-              />
+              <IconBadge src="/images/icons/icon-stopwatch.jpg" size={14} />
               {experience.duration}
             </span>
             {experience.ageNote && (
@@ -116,17 +97,7 @@ export default async function ExperiencePage(props) {
                   gap: 6,
                 }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/icons/icon-phone.jpg"
-                  alt=""
-                  style={{
-                    width: 18,
-                    height: 18,
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                  }}
-                />
+                <IconBadge src="/images/icons/icon-phone.jpg" size={18} />
                 Scanned this from a station QR code?
               </strong>
               <p

@@ -17,7 +17,11 @@ export default function AnimalSpotlight({
     <section className={styles.wrap}>
       <div className={styles.media}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={photo} alt="" loading="lazy" />
+        <img
+          src={photo}
+          alt={`${name}, the animal featured in this spotlight`}
+          loading="lazy"
+        />
       </div>
       <div className={styles.body}>
         <CausticLight />

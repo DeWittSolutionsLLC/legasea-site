@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./AmbientBackdrop.module.css";
 import { CausticLight, DappledLight } from "./Atmosphere";
 
@@ -15,8 +16,15 @@ export default function AmbientBackdrop({ tone = "ocean" }) {
       : "/images/foliage/aquaticbackground.webp";
   return (
     <div className={styles.ambient} data-tone={tone} aria-hidden="true">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={defaultImage} alt="" className={styles.ambientImg} />
+      <Image
+        src={defaultImage}
+        alt=""
+        fill
+        loading="lazy"
+        sizes="100vw"
+        className={styles.ambientImg}
+        style={{ objectFit: "cover" }}
+      />
       {tone === "reptile" ? <DappledLight /> : <CausticLight />}
     </div>
   );

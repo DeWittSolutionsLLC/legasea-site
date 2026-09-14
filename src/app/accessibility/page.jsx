@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import IconBadge from "@/components/IconBadge";
 export const metadata = {
   title: "Accessibility",
   description:
@@ -62,23 +63,12 @@ export default function AccessibilityPage() {
                 padding: 22,
               }}
             >
-              <div
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                  marginBottom: 8,
-                }}
+              <IconBadge
+                src={item.icon}
+                size={44}
+                style={{ marginBottom: 8 }}
                 aria-hidden="true"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.icon}
-                  alt=""
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </div>
+              />
               <h3
                 style={{
                   marginBottom: 6,
@@ -112,17 +102,7 @@ export default function AccessibilityPage() {
               gap: 8,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/icons/icon-wheelchair.jpg"
-              alt=""
-              style={{
-                width: 22,
-                height: 22,
-                borderRadius: "50%",
-                objectFit: "cover",
-              }}
-            />
+            <IconBadge src="/images/icons/icon-wheelchair.jpg" size={22} />
             On-site accessibility toolbar
           </h3>
           <p

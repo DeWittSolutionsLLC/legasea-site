@@ -12,7 +12,7 @@ export default function BentoGrid({ items }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={item.image ?? item.icon}
-            alt=""
+            alt={item.title}
             className={styles.tileImg}
             loading="lazy"
           />

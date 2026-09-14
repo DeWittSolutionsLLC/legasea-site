@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./BookingWidget.module.css";
+import styles from "./PurchaseWidget.module.css";
 function makeConfirmationCode() {
   return `LS-${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
 }
@@ -51,7 +51,7 @@ export default function BookingWidget({ experience }) {
           </p>
           <button
             type="button"
-            className="btn btn-outline btn-sm"
+            className="btn btn-outline btn-outline--glass btn-sm"
             onClick={() => {
               setConfirmed(null);
               setSelectedSlot(null);

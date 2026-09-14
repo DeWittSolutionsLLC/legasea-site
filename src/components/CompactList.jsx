@@ -8,7 +8,11 @@ export default function CompactList({ items }) {
         <Link href={item.href} key={item.href} className={styles.row}>
           <div className={styles.media}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={item.image ?? item.icon} alt="" loading="lazy" />
+            <img
+              src={item.image ?? item.icon}
+              alt={item.title}
+              loading="lazy"
+            />
           </div>
           <div className={styles.content}>
             <p className={styles.title}>{item.title}</p>

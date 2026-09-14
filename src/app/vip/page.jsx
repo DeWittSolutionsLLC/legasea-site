@@ -2,6 +2,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import MemberCard from "@/components/MemberCard";
 import GeofenceDemo from "@/components/GeofenceDemo";
+import IconBadge from "@/components/IconBadge";
 import styles from "@/app/experience/[slug]/page.module.css";
 export const metadata = {
   title: "VIP & Membership",
@@ -90,17 +91,10 @@ export default function VipPage() {
                       fontSize: "0.92rem",
                     }}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <IconBadge
                       src="/images/icons/icon-check.jpg"
-                      alt=""
-                      style={{
-                        width: 18,
-                        height: 18,
-                        borderRadius: "50%",
-                        objectFit: "cover",
-                        flexShrink: 0,
-                      }}
+                      size={18}
+                      style={{ flexShrink: 0 }}
                     />
                     <span>{perk}</span>
                   </li>
@@ -108,7 +102,7 @@ export default function VipPage() {
               </ul>
               <Link
                 href="/shop/vip-scan-shirt"
-                className="btn btn-outline btn-block"
+                className="btn btn-outline btn-outline--glass btn-block"
               >
                 See VIP Scan Shirt
               </Link>
