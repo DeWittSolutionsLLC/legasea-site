@@ -3,6 +3,7 @@ import NewsletterForm from "@/components/NewsletterForm";
 import IconBadge from "@/components/IconBadge";
 import {
   IconInstagram,
+  IconTikTok,
   IconYouTube,
   IconFacebook,
 } from "@/components/icons";
@@ -18,6 +19,12 @@ const channels = [
     icon: IconInstagram,
     handle: "@legaseaaquarium",
     href: "https://instagram.com/legaseaaquarium",
+  },
+  {
+    label: "TikTok",
+    icon: IconTikTok,
+    handle: "@legaseaaquarium",
+    href: "https://tiktok.com",
   },
   {
     label: "YouTube",

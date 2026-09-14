@@ -4,6 +4,7 @@ import styles from "./Footer.module.css";
 import NewsletterForm from "./NewsletterForm";
 import {
   IconInstagram,
+  IconTikTok,
   IconYouTube,
   IconFacebook,
 } from "./icons";
@@ -12,6 +13,11 @@ const socials = [
     label: "Instagram",
     icon: IconInstagram,
     href: "https://instagram.com/legaseaaquarium",
+  },
+  {
+    label: "TikTok",
+    icon: IconTikTok,
+    href: "https://tiktok.com",
   },
   {
     label: "YouTube",
