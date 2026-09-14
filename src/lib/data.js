@@ -768,6 +768,23 @@ export const shows = [
 ];
 export const blogPosts = [
   {
+    slug: "meet-our-stingrays",
+    title: "Meet Our Stingrays: Touch Pool Residents",
+    excerpt:
+      "Everything to know about the stingrays in our touch pool before you feed them yourself.",
+    category: "Animal Spotlight",
+    author: "Marine Care Team",
+    date: "2026-08-20",
+    readMinutes: 3,
+    tone: "ocean",
+    icon: "/images/legaseaRayVideo-poster.jpg",
+    body: [
+      "Stingrays are cartilaginous fish, close relatives of sharks — their skeletons are made of cartilage instead of bone, which is part of what makes their gliding, wing-like swimming style possible.",
+      "Rather than teeth built for biting, rays have flattened plates they use to crush shellfish and other small prey along the seafloor. In our touch pool, guests can hand-feed our rays under keeper supervision as part of the Stingray & Turtle Pond Feeding experience.",
+      "Rays are naturally gentle and curious animals — most guests are surprised by how soft their skin feels. Book a feeding at the touch pool or ask a keeper for the schedule during your visit.",
+    ],
+  },
+  {
     slug: "meet-nova-the-frilled-lizard",
     title: "Meet Nova: Our Frilled Lizard",
     excerpt:
@@ -776,11 +793,29 @@ export const blogPosts = [
     author: "Reptarium Keeper Staff",
     date: "2026-08-14",
     readMinutes: 4,
+    tone: "reptile",
     icon: "/images/icons/icon-lizard.jpg",
     body: [
       "Nova is a male Chlamydosaurus kingii — a frilled lizard native to Northern Australia and Southern New Guinea. Adults typically reach around 33 inches long, and Nova is no exception.",
       "His diet is a rotating menu of crickets, roaches, hornworms, silkworms, soldier fly larvae, superworms, and canned grasshoppers, all dusted with a calcium and vitamin D3 supplement to keep his bones strong.",
       "In the wild, frilled lizards can live for decades; in captivity, they typically live up to 20 years. Come say hi to Nova in The Reptarium on your next visit.",
+    ],
+  },
+  {
+    slug: "the-doctor-fish-spa",
+    title: "The Doctor Fish Spa: How It Works",
+    excerpt:
+      "A ticklish favorite at the saltwater aquarium — what doctor fish are, and why they nibble.",
+    category: "Behind the Scenes",
+    author: "Marine Care Team",
+    date: "2026-08-05",
+    readMinutes: 3,
+    tone: "ocean",
+    icon: "/images/icons/icon-fish.jpg",
+    body: [
+      "Our Fish Spa uses Garra rufa, commonly called \"doctor fish\" — a small freshwater species with no teeth, known for gently nibbling dead skin. The sensation is ticklish, not painful.",
+      "Doctor fish have been used in wellness treatments for decades, originally associated with natural hot springs in Turkey and the surrounding region. At LegaSea, you can try it yourself at the saltwater aquarium section.",
+      "Dip your feet in for a few minutes and let the fish do the rest — it's one of our most talked-about add-on experiences. Available at the front counter the day of your visit.",
     ],
   },
   {
@@ -792,6 +827,7 @@ export const blogPosts = [
     author: "Reptarium Keeper Staff",
     date: "2026-07-30",
     readMinutes: 4,
+    tone: "reptile",
     icon: "/images/icons/icon-lizard.jpg",
     body: [
       "Taz is a male Salvator merianae, or Argentine blue tegu — native to Brazil, Argentina, Paraguay, Uruguay, and Bolivia. Tegus are known for their striking light-blue coloration, which is most intense in adult males like Taz.",
@@ -808,6 +844,7 @@ export const blogPosts = [
     author: "Reptarium Keeper Staff",
     date: "2026-07-02",
     readMinutes: 4,
+    tone: "reptile",
     icon: "/images/icons/icon-frog.jpg",
     body: [
       "Bowser is a male Macrochelys temminckii — an alligator snapping turtle, native to freshwater habitats across the southeastern United States, from the Florida Panhandle west to Texas and north into the Midwest.",
@@ -824,6 +861,7 @@ export const blogPosts = [
     author: "Animal Care Team",
     date: "2026-06-20",
     readMinutes: 3,
+    tone: "reptile",
     icon: "/images/icons/icon-capybara.jpg",
     body: [
       "Capybaras are the largest rodents in the world, and famously one of the most mellow — which makes Javier a natural for up-close, hands-on encounters.",
@@ -1043,4 +1081,24 @@ export function findBlogPost(slug) {
 }
 export function findZone(slug) {
   return zones.find((z) => z.slug === slug);
+}
+const OCEAN_ZONES = new Set(["reef-hall", "deep-tank", "welcome-plaza"]);
+export function getZoneTone(zoneSlug) {
+  return OCEAN_ZONES.has(zoneSlug) ? "ocean" : "reptile";
+}
+const REPTILE_PRODUCT_KEYWORDS = [
+  "reptarium",
+  "reptile",
+  "patch",
+  "pin",
+  "coloring",
+  "terrarium",
+  "enclosure",
+  "barczyk",
+];
+export function getProductTone(product) {
+  const haystack = `${product.slug} ${product.name}`.toLowerCase();
+  return REPTILE_PRODUCT_KEYWORDS.some((kw) => haystack.includes(kw))
+    ? "reptile"
+    : "ocean";
 }

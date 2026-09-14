@@ -9,7 +9,7 @@ export default function AddToVisitButton({ item, className, size = "sm" }) {
   return (
     <button
       type="button"
-      className={`btn ${added ? "btn-ocean" : "btn-outline btn-outline--glass"} btn-${size} ${className ?? ""}`}
+      className={`btn ${added ? "btn-primary" : "btn-outline btn-outline--glass"} btn-${size} ${className ?? ""}`}
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();

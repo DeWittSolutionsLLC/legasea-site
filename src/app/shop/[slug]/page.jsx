@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import ShopProductActions from "@/components/ShopProductActions";
 import AmbientBackdrop from "@/components/AmbientBackdrop";
-import { findProduct, shopProducts } from "@/lib/data";
+import { findProduct, getProductTone, shopProducts } from "@/lib/data";
 import styles from "./page.module.css";
 export function generateStaticParams() {
   return shopProducts.map((p) => ({
@@ -23,7 +23,7 @@ export default async function ShopProductPage(props) {
   if (!product) notFound();
   return (
     <div className="container section">
-      <AmbientBackdrop tone="coral" />
+      <AmbientBackdrop tone={getProductTone(product)} />
       <div className={styles.grid}>
         <div>
           <div className={styles.heroMedia}>

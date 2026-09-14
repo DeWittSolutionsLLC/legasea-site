@@ -17,7 +17,7 @@ export default function ShopPage() {
         eyebrow="Shop"
         title="Merch &amp; gift cards, one checkout"
         subtitle="Everything here ships from the same cart as your tickets — merch and gift cards live together in one Shopify-powered shop."
-        tone="coral"
+        tone="reptile"
         crumbLabel="Shop"
         image="/images/ShopHero.jpg"
       />

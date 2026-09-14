@@ -1,6 +1,6 @@
 .footer {
-  background: var(--ocean-900);
-  color: var(--ocean-100);
+  background: var(--ink-900);
+  color: var(--glass-text);
   margin-top: 0px;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .tagline {
-  color: var(--ocean-200);
+  color: var(--glass-text-dim);
   font-size: 0.92rem;
   max-width: 32ch;
 }
@@ -62,7 +62,7 @@
 }
 
 .linkList a {
-  color: var(--ocean-100);
+  color: var(--glass-text);
   font-size: 0.94rem;
 }
 
@@ -142,7 +142,7 @@
 .trustText span {
   display: block;
   font-size: 0.74rem;
-  color: var(--ocean-300);
+  color: var(--glass-text-dim);
 }
 
 .bottom {
@@ -158,11 +158,11 @@
   justify-content: space-between;
   gap: 10px;
   font-size: 0.82rem;
-  color: var(--ocean-300);
+  color: var(--glass-text-dim);
 }
 
 .bottomInner a {
-  color: var(--ocean-200);
+  color: var(--glass-text);
 }
 
 .bottomInner a:hover {

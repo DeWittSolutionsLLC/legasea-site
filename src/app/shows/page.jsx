@@ -12,6 +12,7 @@ export default function ShowsPage() {
         eyebrow="Today's Schedule"
         title="Shows &amp; keeper talks"
         subtitle="Every show is included with general admission. Times update live — the current or next show is always highlighted."
+        tone="reptile"
         crumbLabel="Show Schedule"
         image="/images/ShowScheduleHero.jpg"
       />

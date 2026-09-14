@@ -212,7 +212,7 @@ export default function VisitPage() {
               packages.
             </p>
           </div>
-          <Link href="/parties" className="btn btn-ocean">
+          <Link href="/parties" className="btn btn-reptile">
             See Parties &amp; Groups
           </Link>
         </div>

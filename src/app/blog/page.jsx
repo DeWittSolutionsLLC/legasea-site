@@ -24,6 +24,7 @@ export default function BlogPage() {
         eyebrow="The Blog"
         title="Animal spotlights &amp; conservation news"
         subtitle="Fresh posts on our animals, our conservation work, and what's happening on-site."
+        tone="reptile"
         crumbLabel="Blog"
       />
 

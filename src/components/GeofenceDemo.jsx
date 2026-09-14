@@ -73,7 +73,7 @@ export default function GeofenceDemo() {
       {status === "idle" && (
         <button
           type="button"
-          className="btn btn-ocean btn-sm"
+          className="btn btn-primary btn-sm"
           onClick={checkLocation}
         >
           Check my location

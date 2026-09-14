@@ -224,7 +224,7 @@ export default function StampHunt() {
               border: "1.5px solid var(--sand-300)",
             }}
           />
-          <button type="submit" className="btn btn-ocean btn-sm">
+          <button type="submit" className="btn btn-primary btn-sm">
             Verify
           </button>
         </form>

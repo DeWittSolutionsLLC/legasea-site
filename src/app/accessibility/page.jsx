@@ -46,6 +46,7 @@ export default function AccessibilityPage() {
         eyebrow="Accessibility"
         title="Visit planning &amp; site accessibility"
         subtitle="Information for planning an accessible visit, plus the on-site tools available on this website."
+        tone="reptile"
         crumbLabel="Accessibility"
         image="/images/AccessibilityHero.jpg"
       />

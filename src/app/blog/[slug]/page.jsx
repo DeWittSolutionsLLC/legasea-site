@@ -23,7 +23,7 @@ export default async function BlogPostPage(props) {
   if (!post) notFound();
   return (
     <article className={`container section ${styles.article}`}>
-      <AmbientBackdrop tone="ocean" />
+      <AmbientBackdrop tone={post.tone ?? "ocean"} />
       <Link href="/blog" className={styles.backLink}>
         ← Back to Blog
       </Link>

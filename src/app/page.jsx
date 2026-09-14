@@ -213,7 +213,7 @@ export default function Home() {
       <section className={styles.bridge}>
         <div className="container">
           <div className={styles.zoneBandHead}>
-            <span className="eyebrow eyebrow--ocean">Wayfinding</span>
+            <span className="eyebrow">Wayfinding</span>
             <h2 className="display">Six zones, one self-guided trail</h2>
             <p>
               Follow the suggested path or pick your own — the trail map shows

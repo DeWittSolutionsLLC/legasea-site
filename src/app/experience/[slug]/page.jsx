@@ -3,7 +3,7 @@ import BookingWidget from "@/components/BookingWidget";
 import DetailHero from "@/components/DetailHero";
 import AmbientBackdrop from "@/components/AmbientBackdrop";
 import IconBadge from "@/components/IconBadge";
-import { experiences, findExperience, findZone } from "@/lib/data";
+import { experiences, findExperience, findZone, getZoneTone } from "@/lib/data";
 import styles from "./page.module.css";
 export function generateStaticParams() {
   return experiences.map((e) => ({
@@ -26,7 +26,7 @@ export default async function ExperiencePage(props) {
   const zone = findZone(experience.zone);
   return (
     <div className="container section">
-      <AmbientBackdrop tone="ocean" />
+      <AmbientBackdrop tone={getZoneTone(experience.zone)} />
       <div className={styles.grid}>
         <div>
           <DetailHero

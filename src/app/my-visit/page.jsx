@@ -57,7 +57,7 @@ export default function MyVisitPage() {
                 </span>
               </div>
               <div className={styles.actions}>
-                <Link href="/visit" className="btn btn-ocean btn-sm">
+                <Link href="/visit" className="btn btn-primary btn-sm">
                   Add More
                 </Link>
                 <button

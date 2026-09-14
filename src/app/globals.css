@@ -137,6 +137,9 @@ body[data-contrast="high"] .tag,
 body[data-contrast="high"] .tag--coral,
 body[data-contrast="high"] .tag--reptile,
 body[data-contrast="high"] .eyebrow--ocean,
+body[data-contrast="high"] .eyebrow--reptile,
+body[data-contrast="high"] .btn-ocean,
+body[data-contrast="high"] .btn-reptile,
 body[data-contrast="high"] .form-success,
 body[data-contrast="high"] .btn-outline--glass {
   background: #ffffff;
@@ -166,7 +169,7 @@ h4 {
   font-family: var(--font-display);
   line-height: 1.1;
   margin: 0 0 0.5em;
-  color: var(--ocean-900);
+  color: var(--ink-900);
   letter-spacing: 0.5px;
 }
 
@@ -333,14 +336,26 @@ h2.display {
   box-shadow: var(--shadow-md);
 }
 
+.btn-reptile {
+  background: var(--reptile-600);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-reptile:hover {
+  background: var(--reptile-500);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 .btn-outline {
   background: transparent;
-  border-color: var(--ocean-600);
-  color: var(--ocean-700);
+  border-color: var(--ink-300);
+  color: var(--ink-700);
 }
 
 .btn-outline:hover {
-  background: var(--ocean-100);
+  background: var(--sand-200);
 }
 
 .btn-outline--glass {
@@ -381,7 +396,7 @@ h2.display {
 /* ---------------- Cards ---------------- */
 
 .card {
-  background: rgba(4, 32, 44, 0.58);
+  background: rgba(22, 26, 28, 0.58);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border-radius: var(--radius-md);

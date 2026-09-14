@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "./ZoneMap.module.css";
 import IconBadge from "@/components/IconBadge";
 import { IconUsers } from "@/components/icons";
-import { experiences, getCrowdLevel, zones } from "@/lib/data";
+import { experiences, getCrowdLevel, getZoneTone, zones } from "@/lib/data";
 const CROWD_TAG_CLASS = {
   Low: "tag--reptile",
   Moderate: "",
@@ -98,7 +98,7 @@ export default function ZoneMap() {
             </button>
             <button
               type="button"
-              className="btn btn-ocean btn-sm"
+              className="btn btn-primary btn-sm"
               onClick={() => stepTour(1)}
               disabled={tourStep === TOUR_ORDER.length - 1}
             >
@@ -178,7 +178,7 @@ export default function ZoneMap() {
           }}
         >
           <span
-            className="eyebrow eyebrow--ocean"
+            className={`eyebrow eyebrow--${getZoneTone(zone.slug)}`}
             style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
           >
             <IconBadge src={zone.icon} size={30} />

@@ -9,7 +9,7 @@
   padding: 12px 16px;
   border-radius: 999px;
   border: none;
-  background: var(--ocean-700);
+  background: var(--ink-900);
   color: white;
   font-family: var(--font-display);
   font-size: 0.9rem;
@@ -19,7 +19,7 @@
 }
 
 .trigger:hover {
-  background: var(--ocean-600, var(--ocean-700));
+  background: var(--ink-700, var(--ink-900));
 }
 
 .count {
